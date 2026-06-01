@@ -64,7 +64,7 @@ const Resume = () => {
           </div>
 
           <h1>
-            Amirhasan
+            Amirhassan
             <span> Kashani</span>
           </h1>
 
