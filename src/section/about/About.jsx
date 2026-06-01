@@ -46,25 +46,12 @@ const About = () => {
 
             {/* TOP */}
 
-            <div className="hero__top">
-
-              <div className="hero__badge">
-
-                <HiSparkles />
-
-                <span>
-                  Luxury Hospitality Portfolio
-                </span>
-
-              </div>
-
-            </div>
 
             {/* TITLE */}
 
             <h1 className="hero__title">
 
-              Amirhasan
+              Amir   hassan
 
               <span>
                 Kashani
@@ -166,7 +153,6 @@ const About = () => {
 
               {/* GLOW */}
 
-              <div className="image__gradient"></div>
 
               {/* IMAGE */}
 
