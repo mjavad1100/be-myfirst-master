@@ -38,10 +38,6 @@ const About = () => {
 
         <div className="hero__content">
 
-          <AnimationOnScroll
-            animateIn="animate__fadeInUp"
-            animateOnce={true}
-          >
 
             {/* TOP */}
 
@@ -71,6 +67,10 @@ const About = () => {
 
             {/* INFO */}
 
+          <AnimationOnScroll
+            animateIn="animate__fadeInUp"
+            animateOnce={true}
+          >
             <div className="hero__info">
 
               <div>
@@ -148,6 +148,7 @@ const About = () => {
             animateOnce={true}
           >
 
+              </AnimationOnScroll>
             <div className="image__wrapper floating">
 
               {/* GLOW */}
@@ -166,7 +167,6 @@ const About = () => {
 
             </div>
 
-          </AnimationOnScroll>
 
         </div>
 
