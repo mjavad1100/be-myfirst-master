@@ -1,7 +1,7 @@
-
 import HeaderImage from '../../img/hassan.jpg';
 import './about.css';
 import data from './data';
+
 import 'animate.css';
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
@@ -10,62 +10,51 @@ import {
   HiArrowLongRight,
   HiSparkles,
   HiPlay,
+  HiMiniStar,
 } from 'react-icons/hi2';
 
 const About = () => {
   return (
+
     <section id="about" className="hero">
 
       {/* BACKGROUND */}
+
+      <div className="hero__noise"></div>
 
       <div className="hero__grid"></div>
 
       <div className="hero__blur hero__blur1"></div>
       <div className="hero__blur hero__blur2"></div>
-      <div className="hero__blur hero__blur3"></div>
+
+      {/* SPOTLIGHT */}
+
+      <div className="hero__spotlight"></div>
 
       {/* CONTAINER */}
 
       <div className="container hero__container">
 
-        {/* LEFT CONTENT */}
+        {/* LEFT */}
 
         <div className="hero__content">
 
           <AnimationOnScroll
             animateIn="animate__fadeInUp"
-            animateOnce
+            animateOnce={true}
           >
 
             {/* TOP */}
 
             <div className="hero__top">
 
-              <div className="hero__topLeft">
+              <div className="hero__badge">
 
-                <div className="hero__badge">
-                  <HiSparkles />
-                  Luxury Ceremony Designer
-                </div>
+                <HiSparkles />
 
-                <div className="hero__line"></div>
-
-              </div>
-
-              {/* SOCIALS */}
-
-              <div className="hero__socials">
-
-                {data.map((item) => (
-                  <a
-                    key={item.id}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {item.icon}
-                  </a>
-                ))}
+                <span>
+                  Luxury Hospitality Portfolio
+                </span>
 
               </div>
 
@@ -74,37 +63,43 @@ const About = () => {
             {/* TITLE */}
 
             <h1 className="hero__title">
-              Amir Hasan
-              <span> Kochak </span>
-              Kashani
+
+              Amirhasan
+
+              <span>
+                Kashani
+              </span>
+
             </h1>
 
             {/* DESCRIPTION */}
 
             <p className="hero__description">
-              Creating unforgettable luxury weddings,
-              royal celebrations, cinematic ceremonies,
-              exclusive VIP experiences and elegant modern
-              atmospheres with artistic vision and premium execution.
+
+              Hospitality professional specializing in luxury restaurants,
+              VIP ceremonies, premium guest experiences, private events
+              and fine dining management with years of professional
+              activity in Iran’s luxury hospitality industry.
+
             </p>
 
-            {/* STATS */}
+            {/* INFO */}
 
-            <div className="hero__stats">
+            <div className="hero__info">
 
-              <div className="hero__stat">
-                <h3>120+</h3>
-                <p>Luxury Events</p>
+              <div>
+                <HiMiniStar />
+                <span>VIP Event Coordination</span>
               </div>
 
-              <div className="hero__stat">
-                <h3>10+</h3>
-                <p>Years Experience</p>
+              <div>
+                <HiMiniStar />
+                <span>Luxury Hospitality</span>
               </div>
 
-              <div className="hero__stat">
-                <h3>98%</h3>
-                <p>Client Satisfaction</p>
+              <div>
+                <HiMiniStar />
+                <span>Fine Dining Experience</span>
               </div>
 
             </div>
@@ -117,17 +112,40 @@ const About = () => {
                 href="#contact"
                 className="hero__btn primary"
               >
-                Book Consultation
+
+                Contact Me
+
                 <HiArrowLongRight />
+
               </a>
 
               <a
                 href="/resume"
                 className="hero__btn secondary"
               >
+
                 <HiPlay />
-                View Portfolio
+
+                View Resume
+
               </a>
+
+            </div>
+
+            {/* SOCIALS */}
+
+            <div className="hero__socials">
+
+              {data.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.icon}
+                </a>
+              ))}
 
             </div>
 
@@ -140,33 +158,39 @@ const About = () => {
         <div className="hero__image">
 
           <AnimationOnScroll
-            animateIn="animate__fadeInDown"
-            animateOnce
+            animateIn="animate__fadeIn"
+            animateOnce={true}
           >
 
-            <div className="image__wrapper">
+            <div className="image__wrapper floating">
 
-              <div className="image__overlay"></div>
+              {/* GLOW */}
 
-              <div className="image__shine"></div>
+              <div className="image__gradient"></div>
+
+              {/* IMAGE */}
 
               <img
                 src={HeaderImage}
-                alt="Amir Hasan Kochak Kashani"
+                alt="Amirhasan Kashani"
               />
+
+              {/* OVERLAY */}
+
+              <div className="image__overlay"></div>
 
               {/* FLOATING CARDS */}
 
               <div className="floating__card card1">
-                ✨ Wedding Design
+                VIP Events
               </div>
 
               <div className="floating__card card2">
-                🥂 VIP Events
+                Luxury Service
               </div>
 
               <div className="floating__card card3">
-                👑 Royal Style
+                Fine Dining
               </div>
 
             </div>
@@ -178,8 +202,8 @@ const About = () => {
       </div>
 
     </section>
+
   );
 };
 
 export default About;
-
