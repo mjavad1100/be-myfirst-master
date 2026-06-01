@@ -1,16 +1,22 @@
+
 import HeaderImage from '../../img/hassan.jpg';
 import './about.css';
 import data from './data';
 import 'animate.css';
+
 import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 import {
   HiArrowLongRight,
   HiSparkles,
+  HiPlay,
 } from 'react-icons/hi2';
 
 const About = () => {
   return (
     <section id="about" className="hero">
+
+      {/* BACKGROUND */}
 
       <div className="hero__grid"></div>
 
@@ -18,52 +24,11 @@ const About = () => {
       <div className="hero__blur hero__blur2"></div>
       <div className="hero__blur hero__blur3"></div>
 
+      {/* CONTAINER */}
+
       <div className="container hero__container">
 
-        {/* IMAGE TOP */}
-
-        <div className="hero__imageTop">
-
-          <AnimationOnScroll
-            animateIn="animate__fadeInDown"
-            animateOnce
-          >
-
-            <div className="image__wrapper">
-
-              <div className="image__ring"></div>
-              <div className="image__ring ring2"></div>
-              <div className="image__ring ring3"></div>
-
-              <div className="image__gradient"></div>
-
-              <img
-                src={HeaderImage}
-                alt="Amir Hasan Kochak Kashani"
-              />
-
-              <div className="floating__card card1">
-                <span>✨</span>
-                Wedding Design
-              </div>
-
-              <div className="floating__card card2">
-                <span>🥂</span>
-                VIP Events
-              </div>
-
-              <div className="floating__card card3">
-                <span>👑</span>
-                Royal Style
-              </div>
-
-            </div>
-
-          </AnimationOnScroll>
-
-        </div>
-
-        {/* CONTENT */}
+        {/* LEFT CONTENT */}
 
         <div className="hero__content">
 
@@ -72,16 +37,41 @@ const About = () => {
             animateOnce
           >
 
+            {/* TOP */}
+
             <div className="hero__top">
 
-              <div className="hero__badge">
-                <HiSparkles />
-                Luxury Ceremony Designer
+              <div className="hero__topLeft">
+
+                <div className="hero__badge">
+                  <HiSparkles />
+                  Luxury Ceremony Designer
+                </div>
+
+                <div className="hero__line"></div>
+
               </div>
 
-              <div className="hero__line"></div>
+              {/* SOCIALS */}
+
+              <div className="hero__socials">
+
+                {data.map((item) => (
+                  <a
+                    key={item.id}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.icon}
+                  </a>
+                ))}
+
+              </div>
 
             </div>
+
+            {/* TITLE */}
 
             <h1 className="hero__title">
               Amir Hasan
@@ -89,12 +79,16 @@ const About = () => {
               Kashani
             </h1>
 
+            {/* DESCRIPTION */}
+
             <p className="hero__description">
               Creating unforgettable luxury weddings,
-              royal celebrations, premium event experiences
-              and elegant atmospheres with a modern artistic
-              vision and cinematic execution.
+              royal celebrations, cinematic ceremonies,
+              exclusive VIP experiences and elegant modern
+              atmospheres with artistic vision and premium execution.
             </p>
+
+            {/* STATS */}
 
             <div className="hero__stats">
 
@@ -115,6 +109,8 @@ const About = () => {
 
             </div>
 
+            {/* BUTTONS */}
+
             <div className="hero__buttons">
 
               <a
@@ -129,23 +125,49 @@ const About = () => {
                 href="/resume"
                 className="hero__btn secondary"
               >
+                <HiPlay />
                 View Portfolio
               </a>
 
             </div>
 
-            <div className="hero__socials">
+          </AnimationOnScroll>
 
-              {data.map((item) => (
-                <a
-                  key={item.id}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {item.icon}
-                </a>
-              ))}
+        </div>
+
+        {/* RIGHT IMAGE */}
+
+        <div className="hero__image">
+
+          <AnimationOnScroll
+            animateIn="animate__fadeInDown"
+            animateOnce
+          >
+
+            <div className="image__wrapper">
+
+              <div className="image__overlay"></div>
+
+              <div className="image__shine"></div>
+
+              <img
+                src={HeaderImage}
+                alt="Amir Hasan Kochak Kashani"
+              />
+
+              {/* FLOATING CARDS */}
+
+              <div className="floating__card card1">
+                ✨ Wedding Design
+              </div>
+
+              <div className="floating__card card2">
+                🥂 VIP Events
+              </div>
+
+              <div className="floating__card card3">
+                👑 Royal Style
+              </div>
 
             </div>
 
@@ -160,3 +182,4 @@ const About = () => {
 };
 
 export default About;
+
