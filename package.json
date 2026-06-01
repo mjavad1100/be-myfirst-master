@@ -2,6 +2,11 @@
   "name": "be-myfirst",
   "version": "0.1.0",
   "private": true,
+
+  "engines": {
+    "node": "24.x"
+  },
+
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -28,18 +33,21 @@
     "uuid": "^9.0.1",
     "video-react": "^0.16.0"
   },
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -52,6 +60,7 @@
       "last 1 safari version"
     ]
   },
+
   "devDependencies": {
     "sass": "^1.64.2"
   }
