@@ -56,6 +56,10 @@ const About = () => {
 
             {/* DESCRIPTION */}
 
+          <AnimationOnScroll
+            animateIn="animate__fadeInUp"
+            animateOnce={true}
+          >
             <p className="hero__description">
 
               Hospitality professional specializing in luxury restaurants,
@@ -67,10 +71,6 @@ const About = () => {
 
             {/* INFO */}
 
-          <AnimationOnScroll
-            animateIn="animate__fadeInUp"
-            animateOnce={true}
-          >
             <div className="hero__info">
 
               <div>

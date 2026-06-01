@@ -411,13 +411,7 @@
 
   border-radius:42px;
 
-  background:
-  linear-gradient(
-    180deg,
-    rgba(255,255,255,.03),
-    rgba(0,0,0,.42)
-  );
-
+ 
   z-index:4;
 }
 
