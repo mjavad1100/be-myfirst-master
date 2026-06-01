@@ -23,14 +23,14 @@ const App = () => {
                 {/* <Burger /> */}
                 <About />
                 <Resume />
-                <Portfolio />
+                {/* <Portfolio /> */}
                 {/* <Servises /> */}
                 {/* <Testimonials /> */}
                 {/* <Contact /> */}
                 {/* <Footer /> */}
             </main>
         </div>
-    );
+    );a
 };
 
 export default App;
