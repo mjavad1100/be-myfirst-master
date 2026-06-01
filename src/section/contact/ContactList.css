@@ -1,0 +1,39 @@
+.mycontainer {
+    width: 63%;
+    text-align: center;
+
+}
+
+.mycontainer h3 {
+    color: var(--color-light);
+    margin: 10px;
+    font-size: 2rem;
+
+}
+
+.massage {
+    background-color: var(--color-light);
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.contacts {
+    background-color: var(--color-light);
+    border: 2px solid var(--color-primary);
+    list-style: none;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+@media (max-width:500px) {
+    .mycontainer {
+        width: 100%;
+    }
+}
