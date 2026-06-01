@@ -179,20 +179,6 @@ const About = () => {
 
               <div className="image__overlay"></div>
 
-              {/* FLOATING CARDS */}
-
-              <div className="floating__card card1">
-                VIP Events
-              </div>
-
-              <div className="floating__card card2">
-                Luxury Service
-              </div>
-
-              <div className="floating__card card3">
-                Fine Dining
-              </div>
-
             </div>
 
           </AnimationOnScroll>
