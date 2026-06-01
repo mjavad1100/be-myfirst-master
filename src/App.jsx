@@ -14,7 +14,7 @@ const App = () => {
                 <Resume />
             </main>
         </div>
-    );a
+    );
 };
 
 export default App;
