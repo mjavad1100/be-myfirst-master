@@ -8,7 +8,6 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 import {
   HiArrowLongRight,
-  HiSparkles,
   HiPlay,
   HiMiniStar,
 } from 'react-icons/hi2';
