@@ -9,7 +9,7 @@ import { AnimationOnScroll } from 'react-animation-on-scroll';
 import {
   HiArrowLongRight,
   HiPlay,
-  HiMiniStar,
+ 
 } from 'react-icons/hi2';
 
 const About = () => {
@@ -71,24 +71,7 @@ const About = () => {
 
             {/* INFO */}
 
-            <div className="hero__info">
 
-              <div>
-                <HiMiniStar />
-                <span>VIP Event Coordination</span>
-              </div>
-
-              <div>
-                <HiMiniStar />
-                <span>Luxury Hospitality</span>
-              </div>
-
-              <div>
-                <HiMiniStar />
-                <span>Fine Dining Experience</span>
-              </div>
-
-            </div>
 
             {/* BUTTONS */}
 
