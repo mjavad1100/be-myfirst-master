@@ -571,15 +571,15 @@
 }
 @media(max-width:700px){
   .image__wrapper img{
-    height:auto;       /* اجازه میده ارتفاع بر اساس عرض عکس تنظیم بشه */
+    height:200px;       /* اجازه میده ارتفاع بر اساس عرض عکس تنظیم بشه */
     max-height:350px;  /* حداکثر ارتفاع برای موبایل */
-    width:80%;         /* عرض عکس کمتر از 100٪ تا کمی فاصله داشته باشه */
-    border-radius:28px;
+    width:70%;        /* عرض عکس کمتر از 100٪ تا کمی فاصله داشته باشه */
+    border-radius:100%;
     object-fit:cover;
     margin-inline:auto; /* وسط چین شدن عکس */
   }
 
   .image__overlay{
-    border-radius:28px;
+    border-radius:100%;
   }
 }
