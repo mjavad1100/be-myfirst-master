@@ -75,7 +75,7 @@ const About = () => {
 
             {/* BUTTONS */}
 
-            <div className="hero__buttons">
+            {/* <div className="hero__buttons">
 
               <a
                 href="#contact"
@@ -99,7 +99,7 @@ const About = () => {
 
               </a>
 
-            </div>
+            </div> */}
 
             {/* SOCIALS */}
 

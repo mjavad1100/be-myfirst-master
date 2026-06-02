@@ -34,8 +34,6 @@ const Resume = () => {
 
     <section className={`resume ${lang === 'fa' ? 'rtl' : ''}`}>
 
-      {/* BACKGROUND */}
-
       <div className="resume__noise"></div>
 
       <div className="resume__bg"></div>
@@ -43,7 +41,7 @@ const Resume = () => {
       <div className="gradient gradient1"></div>
       <div className="gradient gradient2"></div>
 
-      {/* LANGUAGE TOGGLE */}
+      {/* LANGUAGE SWITCH */}
 
       <motion.div
         className="resume__langWrap"
@@ -79,7 +77,7 @@ const Resume = () => {
 
       </motion.div>
 
-      {/* CONTAINER */}
+      {/* MAIN */}
 
       <div className="resume__container">
 
@@ -92,16 +90,12 @@ const Resume = () => {
           variants={fadeUp}
         >
 
-          <span>
-            Luxury Hospitality Portfolio
-          </span>
-
           <h1>
             Amirhasan Kashani
           </h1>
 
           <p>
-            Hospitality • VIP Events • Luxury Restaurants
+            VIP Hospitality • Fine Dining • Luxury Events
           </p>
 
         </motion.div>
@@ -152,49 +146,73 @@ const englishParagraphs = [
   {
     title: 'Professional Background',
     text:
-      'Amirhasan Kashani, born in Tehran in 2004, is a hospitality professional specialized in luxury restaurants, VIP ceremonies, private events and premium guest experience management with more than four years of continuous professional experience.',
+      'Amirhasan Kashani, born in Tehran in 2004, is a luxury hospitality professional with more than four years and eight months of experience in restaurants, fine dining services, VIP hospitality and private event management.',
   },
 
   {
-    title: 'Restaurant Industry Experience',
+    title: 'Early Career & Restaurant Experience',
     text:
-      'His journey began at Emarat Yar Café Restaurant near Tehran City Theater, followed by collaborations with Barman Garden Café and hospitality restaurant teams. He later worked as Captain Order and Head Waiter alongside Nima Ghasemian and Chef Omran during multiple restaurant launch projects including Middle Restaurant and Foodino Servestan Bakery.',
+      'His professional journey began at Emarat Yar Café Restaurant near Tehran City Theater, followed by collaborations with Barman Garden Café and several hospitality teams. He later worked as Captain Order and Head Waiter alongside Nima Ghasemian and Chef Omran during restaurant launch projects and operational management.',
   },
 
   {
-    title: 'VIP Hospitality & Embassy Events',
+    title: 'Middle Restaurant & Foodino Team',
     text:
-      'Amirhasan entered the professional hospitality and ceremony industry through collaboration with Armin Palegane’s hospitality team at the private restaurant of Saman Bank Tower. During this period he participated in luxury embassy ceremonies for Norway, India, Japan and Slovenia alongside Chef Hooman Alavandi and Chef Mahyar Amin Hessari.',
+      'Amirhasan collaborated continuously with Nima Ghasemian’s restaurant teams including Middle Restaurant under the management of Mahla Sharifi. He later joined the Foodino Servestan chain restaurants in the bakery division as Captain Order and Morning Shift Head Waiter.',
   },
 
   {
-    title: 'Luxury Event Operations',
+    title: 'Saman Bank Private Business Lounge',
     text:
-      'He continuously collaborated as one of the core members of Armin Palegane’s ceremony team and worked professionally at Ribbon Tower, one of Iran’s premium luxury event venues, participating in exclusive VIP ceremonies and high-level private gatherings.',
+      'A major stage in his hospitality career began with joining Armin Palegane’s hospitality and ceremony team at the private luxury restaurant and business lounge of Saman Bank Tower. During this collaboration he worked closely with professional kitchen teams including Chef Mahyar Amin Hessari.',
   },
 
   {
-    title: 'Hotel & Fine Dining Experience',
+    title: 'Embassy Events & International Ceremonies',
     text:
-      'He joined Araz Hotel during Nowruz 2025 under the invitation of executive manager Bijan Alavandi and collaborated in the launch and management of Caspi Restaurant on the 24th floor of the hotel. He later worked again with Araz Hotel as Assistant Hospitality Team Manager during the hotel’s peak operational season.',
+      'He participated in luxury embassy events and diplomatic ceremonies for the embassies of Norway, India, Japan, Slovenia and New Zealand under the supervision of Armin Palegane and Chef Hooman Alavandi, becoming one of the core members of the hospitality team.',
   },
 
   {
-    title: 'Current Activities',
+    title: 'Ribbon Tower & Luxury Event Operations',
     text:
-      'Currently, Amirhasan Kashani is collaborating with Armin Palegane as part of the core launch team for Naghsh Negar Restaurant located at the Iranian Garden Museum under the management of Mr. Nikpour. He also remains actively involved in luxury private events and high-end hospitality projects.',
+      'Amirhasan worked professionally with Ribbon Tower, one of Iran’s important luxury event venues, participating in high-level ceremonies and exclusive private gatherings. He also collaborated in luxury events with teams and brands such as Hanna Darvish, Hello Chef, Aston Showroom and Iran Mall.',
   },
 
   {
-    title: 'Leadership & Coordination',
+    title: 'Araz Five-Star Hotel Experience',
     text:
-      'One of his strongest professional abilities is gathering and coordinating elite hospitality personnel for luxury ceremonies and private events. Alongside event operations, he is also responsible for coordination and executive supervision of hospitality teams.',
+      'In Nowruz 1404, he was invited by Bijan Alavandi, Executive Manager of Araz Hotel, to join the hotel team. He participated in the launch of Caspi Restaurant on the 24th floor of the hotel and later returned as Assistant Hospitality Team Manager during the hotel’s peak operational season under the supervision of the hotel management and F&B department.',
+  },
+
+  {
+    title: 'Rendezvous Point Restaurant',
+    text:
+      'He collaborated with Rendezvous Point Restaurant alongside Chef Milad Meydani and restaurant manager Amin Reza Beik as Head Shift Supervisor. This project became recognized as one of Tehran’s first private mansion-style restaurants.',
+  },
+
+  {
+    title: 'Collaboration with Renowned Chefs',
+    text:
+      'Throughout his hospitality career, Amirhasan has collaborated with prominent figures in Iran’s hospitality and culinary industry including Chef Milad Meydani, Chef Hooman Alavandi, Chef Tashkiran, Chef Kefayat Beigi, Chef Mahyar Amin Hessari, Chef Omran and Hadi Zakaei.',
+  },
+
+  {
+    title: 'Current Position & Naghsh Garden',
+    text:
+      'Currently, Amirhasan Kashani is working as part of the core launch and hospitality team for Naghsh Garden Restaurant located at the Iranian Garden Museum under the management of Mr. Nikpour in collaboration with Armin Palegane.',
+  },
+
+  {
+    title: 'Leadership & Coordination Skills',
+    text:
+      'One of his strongest professional abilities is gathering and coordinating elite hospitality staff for VIP ceremonies and luxury events. He is highly experienced in executive coordination, team management and high-pressure hospitality operations.',
   },
 
   {
     title: 'Additional Professional Activity',
     text:
-      'Alongside the restaurant and hospitality industry, Amirhasan is also professionally active in the beauty and hairstyling industry.',
+      'Alongside his professional hospitality career, Amirhasan is also active in the beauty and hairstyling industry as a professional specialist.',
   },
 
 ];
@@ -204,49 +222,73 @@ const persianParagraphs = [
   {
     title: 'سوابق حرفه‌ای',
     text:
-      'اینجانب امیرحسن کاشانی متولد ۱۳۸۳ در تهران، دارای بیش از چهار سال فعالیت حرفه‌ای در حوزه رستوران، تشریفات، ایونت‌های خصوصی و مدیریت هاسپیتلیتی لوکس می‌باشم.',
+      'اینجانب امیرحسن کاشانی متولد ۱۳۸۳ در تهران، دارای بیش از چهار سال و هشت ماه سابقه حرفه‌ای در حوزه رستوران، فاین داینینگ، تشریفات VIP و مدیریت هاسپیتلیتی می‌باشم.',
   },
 
   {
     title: 'شروع فعالیت حرفه‌ای',
     text:
-      'شروع فعالیت حرفه‌ای بنده از کافه رستوران عمارت یار واقع در تئاتر شهر تهران بود و سپس همکاری با کافه باغ بارمان و تیم‌های حرفه‌ای رستورانی ادامه پیدا کرد. در ادامه به عنوان کاپیتان اردر و هد ویتر در پروژه‌های راه‌اندازی رستوران همراه با نیما قاسمیان و شف عمران فعالیت داشتم.',
+      'شروع فعالیت حرفه‌ای بنده از کافه رستوران عمارت یار واقع در محدوده تئاتر شهر تهران بود و سپس همکاری با کافه باغ بارمان و مجموعه‌های حرفه‌ای رستورانی ادامه پیدا کرد. در ادامه به عنوان کاپیتان اردر و هد ویتر در پروژه‌های راه‌اندازی رستوران کنار نیما قاسمیان و شف عمران فعالیت داشتم.',
   },
 
   {
-    title: 'تشریفات و سفارت‌ها',
+    title: 'تجربه رستوران و تیم‌های حرفه‌ای',
     text:
-      'ورود حرفه‌ای بنده به حوزه تشریفات و هاسپیتلیتی از طریق همکاری با تیم آقای آرمین پالگانه در رستوران خصوصی برج سامان شکل گرفت. در این دوره در ایونت‌ها و مراسم سفارت‌های نروژ، هند، ژاپن و اسلوانی حضور داشتم و با شف هومن الوندی و شف مهیار امین حصاری همکاری کردم.',
+      'همکاری زنجیره‌ای با تیم آقای قاسمیان در رستوران میدل با مدیریت محلا شریفی و سپس حضور در رستوران‌های زنجیره‌ای فودینو سروستان در بخش بیکری به عنوان کاپیتان اردر و هد ویتر تایم صبح از مهم‌ترین تجربیات حرفه‌ای بنده بوده است.',
   },
 
   {
-    title: 'ایونت‌های لاکچری',
+    title: 'رستوران خصوصی بانک سامان',
     text:
-      'به عنوان یکی از اعضای اصلی تیم تشریفات آقای پالگانه، در مراسم‌ها و ایونت‌های خصوصی سطح بالا و همچنین مجموعه ریبون که از مهم‌ترین لوکیشن‌های تشریفاتی ایران محسوب می‌شود، همکاری مستمر داشته‌ام.',
+      'شروع همکاری حرفه‌ای بنده با تیم تشریفات و هاسپیتلیتی آقای آرمین پالگانه در رستوران خصوصی و بیزینس لانژ برج اختصاصی بانک سامان شکل گرفت. در این مجموعه در کنار تیم حرفه‌ای آشپزخانه و شف مهیار امین حصاری فعالیت داشتم.',
   },
 
   {
-    title: 'هتل آراز و فاین داینینگ',
+    title: 'همکاری با سفارت‌ها و ایونت‌های بین‌المللی',
     text:
-      'در نوروز ۱۴۰۴ به دعوت آقای بیژن الوندی به تیم هتل آراز پیوستم و در افتتاح و مدیریت رستوران کسپی طبقه ۲۴ هتل مشارکت داشتم. همچنین مجدداً به عنوان دستیار مدیریت تیم تشریفات در بازه پیک هتل با مدیریت مجموعه همکاری نمودم.',
+      'آغاز همکاری در ایونت‌های سفارت نروژ، هند، ژاپن، اسلوونی و نیوزلند تحت مدیریت آقای پالگانه و شف هومن الوندی، بخشی مهم از رزومه حرفه‌ای بنده محسوب می‌شود و به عنوان یکی از اعضای اصلی تیم تشریفات در این پروژه‌ها حضور مستمر داشته‌ام.',
   },
 
   {
-    title: 'فعالیت‌های فعلی',
+    title: 'رویدادهای لوکس و برج ریبون',
     text:
-      'در حال حاضر به عنوان یکی از اعضای اصلی تیم راه‌اندازی رستوران نقش نگار در باغ موزه ایرانی با مدیریت آقای نیک‌پور و همکاری آقای پالگانه فعالیت می‌کنم و همزمان در برگزاری ایونت‌های خصوصی سطح بالا حضور دارم.',
+      'همکاری اختصاصی به عنوان نیروی تشریفات با برج ریبون، یکی از مهم‌ترین لوکیشن‌های برگزاری رویدادهای تشریفاتی ایران، و حضور در ایونت‌های خصوصی سطح بالا همراه با تیم‌هایی همچون حنا درویش، هلو شف، شوروم آستین و ایران مال از دیگر فعالیت‌های حرفه‌ای بنده است.',
   },
 
   {
-    title: 'توانایی مدیریتی',
+    title: 'هتل پنج ستاره آراز',
     text:
-      'از مهم‌ترین توانایی‌های حرفه‌ای بنده، گردهم جمع کردن بهترین نیروهای تشریفات برای برگزاری ایونت‌ها و مدیریت هماهنگی تیم‌های هاسپیتلیتی در رویدادهای خصوصی و VIP می‌باشد.',
+      'در نوروز ۱۴۰۴ به دعوت آقای بیژن الوندی مدیر اجرایی هتل آراز، همکاری خود را با این مجموعه آغاز کردم و در افتتاح رستوران کسپی طبقه ۲۴ هتل حضور داشتم. همچنین در بازه پیک هتل به عنوان دستیار مدیریت تیم تشریفات تحت نظارت مدیریت غذا و نوشابه و مدیریت اصلی هتل فعالیت نمودم.',
   },
 
   {
-    title: 'فعالیت جانبی',
+    title: 'رستوران راندوو پوینت',
     text:
-      'همزمان با فعالیت حرفه‌ای در صنعت رستوران و هاسپیتلیتی، در حوزه آرایشگری و زیبایی نیز به صورت حرفه‌ای فعالیت دارم.',
+      'همکاری با رستوران راندوو پوینت در کنار تیم آشپزخانه شف میلاد میدانی و مدیریت آقای امین رضا بیک به عنوان هد شیفت، از دیگر تجربیات مهم حرفه‌ای بنده است. این مجموعه به عنوان یکی از اولین رستوران‌ها و عمارت‌های خصوصی تهران شناخته شد.',
+  },
+
+  {
+    title: 'افتخار همکاری با بزرگان صنعت هاسپیتلیتی',
+    text:
+      'در طول فعالیت حرفه‌ای خود افتخار همکاری با چهره‌های برجسته صنعت آشپزی و هاسپیتلیتی ایران از جمله شف میلاد میدانی، شف هومن الوندی، شف تاشکیران، شف کفایت بیگی، شف مهیار امین حصاری، شف عمران و هادی ذکایی را داشته‌ام.',
+  },
+
+  {
+    title: 'فعالیت فعلی و نقش گاردن',
+    text:
+      'در حال حاضر به عنوان یکی از اعضای اصلی تیم راه‌اندازی رستوران نقش گاردن در باغ موزه ایرانی با مدیریت آقای نیک‌پور و همکاری آقای پالگانه فعالیت دارم و همزمان در هماهنگی ایونت‌های تشریفاتی و سفارت‌ها نیز حضور مستمر دارم.',
+  },
+
+  {
+    title: 'توانایی‌های کلیدی',
+    text:
+      'یکی از مهم‌ترین توانایی‌های حرفه‌ای بنده، گردهم آوردن نیروهای حرفه‌ای تشریفات و هماهنگی اجرایی تیم‌ها در برگزاری رویدادهای VIP و لاکچری می‌باشد.',
+  },
+
+  {
+    title: 'فعالیت‌های همزمان',
+    text:
+      'همزمان با فعالیت حرفه‌ای در صنعت رستوران و هاسپیتلیتی، در زمینه آرایشگری و زیبایی نیز به صورت حرفه‌ای فعالیت دارم.',
   },
 
 ];
