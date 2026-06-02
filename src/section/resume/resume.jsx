@@ -1,14 +1,13 @@
 'use client';
 
 import './resume.css';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { HiLanguage } from 'react-icons/hi2';
 
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 60,
+    y: 70,
   },
 
   visible: (i = 1) => ({
@@ -16,70 +15,76 @@ const fadeUp = {
     y: 0,
 
     transition: {
-      delay: i * 0.05,
-      duration: 0.9,
+      delay: i * 0.08,
+      duration: 1,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
 };
 
 const Resume = () => {
+
   const [lang, setLang] = useState('en');
 
-  const content =
-    lang === 'en'
-      ? englishParagraphs
-      : persianParagraphs;
+  const content = lang === 'en'
+    ? englishParagraphs
+    : persianParagraphs;
 
   return (
-    <section
-      className={`resume ${
-        lang === 'fa' ? 'rtl' : ''
-      }`}
-    >
-      {/* BACKGROUND */}
+
+<section
+  className={`resume ${lang === 'fa' ? 'rtl' : ''}`}
+  dir={lang === 'fa' ? 'rtl' : 'ltr'}
+>
 
       <div className="resume__noise"></div>
 
-      <div className="resume__grid"></div>
+      <div className="resume__bg"></div>
 
-      <div className="resume__gradient resume__gradient1"></div>
-      <div className="resume__gradient resume__gradient2"></div>
+      <div className="gradient gradient1"></div>
+      <div className="gradient gradient2"></div>
 
-      {/* LANGUAGE */}
+      {/* LANGUAGE SWITCH */}
 
       <motion.div
-        className="resume__topbar"
+        className="resume__langWrap"
         initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-        <div className="resume__langSwitcher">
+
+        <div className="resume__lang">
 
           <button
-            onClick={() => setLang('en')}
             className={lang === 'en' ? 'active' : ''}
+            onClick={() => setLang('en')}
           >
-            <span>EN</span>
+            English
           </button>
 
           <button
-            onClick={() => setLang('fa')}
             className={lang === 'fa' ? 'active' : ''}
+            onClick={() => setLang('fa')}
           >
-            <span>FA</span>
+            فارسی
           </button>
 
-          <div className="resume__langIcon">
-            <HiLanguage />
-          </div>
+          <div
+            className={`resume__langBg ${
+              lang === 'fa' ? 'right' : ''
+            }`}
+          ></div>
 
         </div>
+
       </motion.div>
 
-      {/* HERO */}
+      {/* MAIN */}
 
       <div className="resume__container">
+
+        {/* HERO */}
 
         <motion.div
           className="resume__hero"
@@ -88,27 +93,13 @@ const Resume = () => {
           variants={fadeUp}
         >
 
-          <motion.div
-            className="resume__badge"
-            variants={fadeUp}
-          >
-            Luxury Hospitality Portfolio
-          </motion.div>
+          <h1>
+            Amirhasan Kashani
+          </h1>
 
-          <motion.h1
-            variants={fadeUp}
-          >
-            Amirhasan
-            <br />
-            Kashani
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-          >
-            VIP Hospitality • Fine Dining •
-            Luxury Events • Executive Service
-          </motion.p>
+          <p>
+            VIP Hospitality • Fine Dining • Luxury Events
+          </p>
 
         </motion.div>
 
@@ -116,162 +107,227 @@ const Resume = () => {
 
         <div className="resume__content">
 
-          <AnimatePresence mode="wait">
+          {content.map((item, i) => (
 
-            {content.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="resume__card"
+            >
 
-              <motion.div
-                key={`${lang}-${i}`}
-                className="resume__card"
-                custom={i}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                whileHover={{
-                  y: -10,
-                  scale: 1.015,
-                }}
-              >
+              <div className="resume__cardGlow"></div>
 
-                <div className="resume__cardBlur"></div>
+              <div className="resume__cardLine"></div>
 
-                <div className="resume__cardNumber">
-                  {String(i + 1).padStart(2, '0')}
-                </div>
+              <h2>
+                {item.title}
+              </h2>
 
-                <h2>
-                  {item.title}
-                </h2>
+              <p>
+                {item.text}
+              </p>
 
-                <p>
-                  {item.text}
-                </p>
+            </motion.div>
 
-              </motion.div>
-
-            ))}
-
-          </AnimatePresence>
+          ))}
 
         </div>
 
       </div>
 
     </section>
+
   );
 };
-
-export default Resume;
-
-/* ========================= */
-/* ENGLISH */
-/* ========================= */
-
-const englishParagraphs = [
-
-  {
-    title: 'Professional Background',
-    text:
-      'Amirhasan Kashani is a luxury hospitality professional with extensive experience in fine dining, VIP ceremonies, restaurant operations and luxury event management.',
-  },
-
-  {
-    title: 'Restaurant Experience',
-    text:
-      'His journey began with professional restaurant collaborations in Tehran including Emarat Yar Café, Barman Garden Café and multiple hospitality projects alongside elite restaurant teams.',
-  },
-
-  {
-    title: 'Luxury Hospitality',
-    text:
-      'He has worked within executive hospitality environments including Saman Bank private business lounge and multiple embassy ceremonies and diplomatic events.',
-  },
-
-  {
-    title: 'Embassy Events',
-    text:
-      'Amirhasan participated in high-level events for Norway, India, Japan, Slovenia and New Zealand embassies alongside luxury hospitality teams.',
-  },
-
-  {
-    title: 'Luxury Event Operations',
-    text:
-      'Professional collaborations with Ribbon Tower, Aston Showroom, Iran Mall and private luxury ceremonies became part of his executive hospitality background.',
-  },
-
-  {
-    title: 'Araz Five-Star Hotel',
-    text:
-      'He joined Araz Hotel during the launch of Caspi Restaurant and later worked within the hospitality management team during peak hotel operations.',
-  },
-
-  {
-    title: 'Leadership Skills',
-    text:
-      'One of his strongest abilities is organizing elite hospitality teams for luxury events and managing high-pressure executive operations.',
-  },
-
-  {
-    title: 'Current Position',
-    text:
-      'Currently he is part of the launch and hospitality operations team for Naghsh Garden Restaurant located in the Iranian Garden Museum.',
-  },
-
-];
-
-/* ========================= */
-/* PERSIAN */
-/* ========================= */
 
 const persianParagraphs = [
 
   {
-    title: 'سوابق حرفه‌ای',
+    title: "سوابق حرفه‌ای",
     text:
-      'امیرحسن کاشانی دارای سابقه حرفه‌ای در حوزه هاسپیتلیتی، فاین داینینگ، تشریفات VIP و مدیریت رویدادهای لاکچری می‌باشد.',
+      "اینجانب امیرحسن کاشانی متولد 1383 در تهران. شروع فعالیت حرفه‌ای از کافه رستوران عمارت یار واقع در تئاتر شهر خیابان رشت، سپس همکاری با کافه باغ بارمان. اولین همکاری به عنوان کاپیتان اردر با مجموعه رستوران همراه با راه‌اندازی نیما قاسمیان و شف عمران..."
   },
 
   {
-    title: 'تجربه رستورانی',
+    title:
+      "تجربه رستوران و تیم‌های حرفه‌ای (نیما تیم)",
+
     text:
-      'فعالیت حرفه‌ای ایشان از همکاری با مجموعه‌های رستورانی تهران از جمله عمارت یار، باغ بارمان و تیم‌های حرفه‌ای هاسپیتلیتی آغاز شد.',
+      "همکاری زنجیره‌ای با تیم آقای قاسمیان در رستوران میدل با مدیریت محلا شریفی، سپس رستوران‌های زنجیره‌ای فودینو سروستان بخش بیکری به عنوان کاپیتان اردر و هد ویتر تایم صبح..."
   },
 
   {
-    title: 'هاسپیتلیتی لوکس',
+    title:
+      "رستوران خصوصی بانک سامان",
+
     text:
-      'همکاری در لانژ اختصاصی بانک سامان و پروژه‌های تشریفاتی سطح بالا بخشی مهم از رزومه حرفه‌ای ایشان محسوب می‌شود.',
+      "شروع همکاری حرفه ای با تیم تشریفات و هاسپیتلیتی آقای آرمین پالگانه در رستوران خصوصی رده بالای پرسنل بانک سامان در برج اختصاصی بانک سامان کنار تیم حرفه ای آشپزخانه شف مهیار امین حصاری"
   },
 
   {
-    title: 'ایونت‌های سفارت',
+    title:
+      "همکاری و برگزاری ایونت های سفارت",
+
     text:
-      'حضور در مراسم‌ها و ایونت‌های سفارت‌های نروژ، هند، ژاپن، اسلوونی و نیوزلند در کنار تیم‌های حرفه‌ای تشریفات از تجربیات مهم ایشان است.',
+      "شروع ایونت‌های سفارت نروژ، هند، ژاپن، اسلوونی و نیوزلند به سرپرستی آقای پالگانه و شف هومن الوندی..."
   },
 
   {
-    title: 'رویدادهای لاکچری',
+    title:
+      "رویدادهای لوکس و برج ریبون",
+
     text:
-      'همکاری حرفه‌ای با برج ریبون، ایران مال، شوروم آستون و ایونت‌های خصوصی سطح بالا بخشی از فعالیت‌های اجرایی ایشان بوده است.',
+      "همکاری اختصاصی به عنوان نیروی تشریفات با برج ریبون مکان برگزاری رویداد های مهم تشریفات ایران..."
   },
 
   {
-    title: 'هتل پنج ستاره آراز',
+    title:
+      "تجربه هتل و رستوران",
+
     text:
-      'همکاری در افتتاح رستوران کسپی و مدیریت تیم تشریفات هتل آراز در بازه پیک کاری از مهم‌ترین تجربیات ایشان می‌باشد.',
+      "دعوت از جانب آقای بیژن الوندی مدیر اجرایی هتل آراز برای همکاری در نوروز 1404..."
   },
 
   {
-    title: 'مهارت‌های مدیریتی',
+    title:
+      "راندوو پوینت",
+
     text:
-      'توانایی مدیریت تیم‌های تشریفات، هماهنگی اجرایی و کنترل رویدادهای VIP از نقاط قوت حرفه‌ای ایشان است.',
+      "همکاری با رستوران راندوو پوینت و تیم آشپزخانه میلاد میدانی به عنوان هد شیفت..."
   },
 
   {
-    title: 'فعالیت فعلی',
+    title:
+      "افتخار همکاری با بزرگان صنعت هاسپیتلیتی",
+
     text:
-      'در حال حاضر در تیم راه‌اندازی و مدیریت تشریفات رستوران نقش گاردن در باغ موزه ایرانی فعالیت دارند.',
+      "همکاری با شف میلاد میدانی، شف هومن الوندی، شف تاشکیران، شف کفایت بیگی..."
+  },
+
+  {
+    title:
+      "شرایط کاری حال بنده",
+
+    text:
+      "نقش گاردن: همکاری با آقای پالگانه به عنوان نفرات اصلی برای راه اندازی رستوران نقش گاردن..."
+  },
+
+  {
+    title:
+      "توانایی‌های کلیدی",
+
+    text:
+      "یکی از مهم‌ترین توانایی‌های بنده در برگزاری ایونت‌ها، گردهم آوردن بهترین نیروهای تشریفات..."
+  },
+
+  {
+    title:
+      "فعالیت‌های همزمان",
+
+    text:
+      "همزمان با فعالیت حرفه‌ای در حوزه کافه رستوران، در زمینه آرایشگری و زیبایی نیز فعالیت حرفه‌ای دارم."
   },
 
 ];
+
+/* =========================
+   ENGLISH
+========================= */
+
+const englishParagraphs = [
+
+  {
+    title:
+      "Professional Background",
+
+    text:
+      "Amirhasan Kashani born in Tehran in 2004. Started his professional career at Emarat Yar Café Restaurant..."
+  },
+
+  {
+    title:
+      "Restaurant & Professional Teams",
+
+    text:
+      "Collaborated with Nima Ghasemian’s hospitality teams including Middle Restaurant..."
+  },
+
+  {
+    title:
+      "Saman Bank Business Lounge",
+
+    text:
+      "Professional collaboration with Armin Palegane’s luxury hospitality team..."
+  },
+
+  {
+    title:
+      "Embassy Events",
+
+    text:
+      "Participated in embassy events for Norway, India, Japan, Slovenia and New Zealand..."
+  },
+
+  {
+    title:
+      "Luxury Events & Ribbon Tower",
+
+    text:
+      "Worked with Ribbon Tower as luxury hospitality staff for high-end ceremonies..."
+  },
+
+  {
+    title:
+      "Araz Five-Star Hotel",
+
+    text:
+      "Invited by Bijan Alavandi executive manager of Araz Hotel during Nowruz 1404..."
+  },
+
+  {
+    title:
+      "Rendezvous Point",
+
+    text:
+      "Worked alongside Chef Milad Meydani as Head Shift Supervisor..."
+  },
+
+  {
+    title:
+      "Hospitality Industry Leaders",
+
+    text:
+      "Collaborated with major chefs including Chef Hooman Alavandi, Chef Omran..."
+  },
+
+  {
+    title:
+      "Current Position",
+
+    text:
+      "Collaborating in launching Naghsh Garden Restaurant under Armin Palegane..."
+  },
+
+  {
+    title:
+      "Key Skills",
+
+    text:
+      "Strong ability in gathering elite hospitality staff and coordinating VIP events..."
+  },
+
+  {
+    title:
+      "Additional Activities",
+
+    text:
+      "Professional activity in beauty and hairstyling alongside hospitality career..."
+  },
+
+];
+
+export default Resume;

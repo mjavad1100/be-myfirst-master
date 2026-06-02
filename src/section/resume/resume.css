@@ -1,134 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Vazirmatn:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  background:#040404;
-  overflow-x:hidden;
-  color:white;
-  font-family:'Inter',sans-serif;
-}
-
-/* SECTION */
+/* =========================
+   BASE
+========================= */
 
 .resume{
   position:relative;
+
   min-height:100vh;
+
+  padding:8rem 2rem;
+
   overflow:hidden;
 
-  padding:
-  7rem
-  1.5rem;
-
   background:
-  radial-gradient(
-    circle at top left,
-    rgba(193,154,107,.12),
-    transparent 30%
-  ),
+  radial-gradient(circle at top,#161616 0%,#070707 45%,#020202 100%);
 
-  radial-gradient(
-    circle at bottom right,
-    rgba(255,255,255,.04),
-    transparent 30%
-  ),
-
-  #050505;
+  color:white;
 }
 
-/* RTL */
+.resume__container{
+  position:relative;
+  z-index:2;
 
-.resume.rtl{
-  direction:rtl;
-  font-family:'Vazirmatn',sans-serif;
+  width:min(1400px,100%);
+  margin:auto;
 }
 
-/* NOISE */
+.resume__bg{
+  position:absolute;
+  inset:0;
+
+  background-image:
+  linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+  background-size:80px 80px;
+
+  mask-image:radial-gradient(circle at center,black,transparent 85%);
+}
 
 .resume__noise{
   position:absolute;
   inset:0;
 
-  background-image:
-  url('https://grainy-gradients.vercel.app/noise.svg');
-
-  opacity:.035;
-}
-
-/* GRID */
-
-.resume__grid{
-  position:absolute;
-  inset:0;
+  opacity:.04;
+  pointer-events:none;
 
   background-image:
-  linear-gradient(
-    rgba(255,255,255,.03) 1px,
-    transparent 1px
-  ),
-
-  linear-gradient(
-    90deg,
-    rgba(255,255,255,.03) 1px,
-    transparent 1px
-  );
-
-  background-size:70px 70px;
+  url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
-/* GRADIENT */
-
-.resume__gradient{
+.gradient{
   position:absolute;
+
+  width:500px;
+  height:500px;
+
   border-radius:50%;
+
   filter:blur(140px);
+
+  opacity:.12;
+
+  pointer-events:none;
 }
 
-.resume__gradient1{
-  width:400px;
-  height:400px;
+.gradient1{
+  top:-100px;
+  left:-100px;
 
-  background:#c19a6b;
-
-  top:-180px;
-  left:-180px;
-
-  opacity:.14;
+  background:#d7b18a;
 }
 
-.resume__gradient2{
-  width:320px;
-  height:320px;
+.gradient2{
+  bottom:-150px;
+  right:-100px;
 
-  background:white;
-
-  bottom:-120px;
-  right:-120px;
-
-  opacity:.05;
+  background:#9d704e;
 }
 
-/* CONTAINER */
+/* =========================
+   RTL MODE
+========================= */
 
-.resume__container{
-  position:relative;
-  z-index:5;
+.resume.rtl{
+  direction:rtl;
+  text-align:right;
 
-  max-width:1320px;
-  margin:auto;
+  font-family:
+  'Vazirmatn',
+  sans-serif;
 }
 
-/* TOPBAR */
+.resume.rtl *{
+  direction:rtl;
+}
 
-.resume__topbar{
+.resume.rtl .resume__hero{
+  text-align:center;
+}
+
+.resume.rtl .resume__hero p{
+  letter-spacing:0;
+}
+
+.resume.rtl .resume__content{
+  direction:rtl;
+}
+
+.resume.rtl .resume__card{
+  text-align:right;
+}
+
+.resume.rtl .resume__card h2{
+  text-align:right;
+}
+
+.resume.rtl .resume__card p{
+  text-align:right;
+}
+
+.resume.rtl .resume__cardLine{
+  margin-left:auto;
+
+  background:
+  linear-gradient(
+    to left,
+    #c8a47e,
+    transparent
+  );
+}
+
+.resume.rtl .resume__cardGlow{
+  right:auto;
+  left:-100px;
+}
+
+.resume.rtl .resume__lang{
+  direction:rtl;
+}
+
+.resume.rtl .resume__lang button{
+  font-family:
+  'Vazirmatn',
+  sans-serif;
+}
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+.resume__langWrap{
   position:sticky;
-  top:25px;
+  top:24px;
 
-  z-index:200;
+  z-index:100;
+
+  width:100%;
 
   display:flex;
   justify-content:center;
@@ -136,9 +165,7 @@ body{
   margin-bottom:5rem;
 }
 
-/* LANG */
-
-.resume__langSwitcher{
+.resume__lang{
   position:relative;
 
   display:flex;
@@ -155,142 +182,70 @@ body{
   border:
   1px solid rgba(255,255,255,.08);
 
-  backdrop-filter:blur(20px);
+  backdrop-filter:blur(30px);
 
   box-shadow:
-  0 20px 80px rgba(0,0,0,.45);
+  0 20px 70px rgba(0,0,0,.45);
 }
 
-.resume__langSwitcher button{
-  position:relative;
-
-  width:72px;
-  height:54px;
-
+.resume__lang button{
   border:none;
   outline:none;
+
+  width:130px;
+  height:52px;
 
   border-radius:999px;
 
   background:transparent;
 
-  color:rgba(255,255,255,.45);
+  color:
+  rgba(255,255,255,.55);
 
-  font-size:.95rem;
+  font-size:.92rem;
   font-weight:700;
-  letter-spacing:2px;
 
   cursor:pointer;
 
-  transition:.45s cubic-bezier(.16,1,.3,1);
+  transition:
+  .45s cubic-bezier(.16,1,.3,1);
 }
 
-.resume__langSwitcher button span{
-  position:relative;
-  z-index:3;
+.resume__lang button:hover{
+  color:white;
 }
 
-.resume__langSwitcher button::before{
-  content:'';
-
-  position:absolute;
-  inset:0;
-
-  border-radius:999px;
-
+.resume__lang button.active{
   background:
   linear-gradient(
     135deg,
-    rgba(193,154,107,.25),
-    rgba(255,255,255,.08)
-  );
-
-  opacity:0;
-
-  transition:.45s ease;
-}
-
-.resume__langSwitcher button:hover{
-  color:white;
-  transform:translateY(-2px);
-}
-
-.resume__langSwitcher button.active{
-  color:white;
-
-  box-shadow:
-  0 10px 40px rgba(193,154,107,.22);
-}
-
-.resume__langSwitcher button.active::before{
-  opacity:1;
-}
-
-.resume__langIcon{
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:
-  linear-gradient(
-    135deg,
-    #c19a6b,
-    #f0d2ab
+    #d7b18a,
+    #9d704e
   );
 
   color:#050505;
 
-  font-size:1.2rem;
-
   box-shadow:
-  0 15px 40px rgba(193,154,107,.35);
+  0 15px 40px rgba(200,164,126,.35);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .resume__hero{
   text-align:center;
+
   margin-bottom:6rem;
 }
 
-.resume__badge{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:
-  .7rem
-  1.4rem;
-
-  border-radius:999px;
-
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  background:
-  rgba(255,255,255,.04);
-
-  color:#d6b48b;
-
-  font-size:.8rem;
-  letter-spacing:3px;
-  text-transform:uppercase;
-
-  margin-bottom:2rem;
-
-  backdrop-filter:blur(20px);
-}
-
 .resume__hero h1{
-  font-size:
-  clamp(4rem,10vw,8rem);
+  margin-top:2rem;
 
-  line-height:.9;
+  font-size:
+  clamp(4rem,9vw,7rem);
+
+  line-height:.88;
 
   letter-spacing:-5px;
 
@@ -303,7 +258,7 @@ body{
     135deg,
     #ffffff,
     #d7b18a,
-    #8a6645
+    #9d704e
   );
 
   -webkit-background-clip:text;
@@ -314,16 +269,14 @@ body{
   margin-top:2rem;
 
   color:
-  rgba(255,255,255,.58);
+  rgba(255,255,255,.55);
 
-  font-size:1rem;
-
-  letter-spacing:3px;
-
-  line-height:2;
+  letter-spacing:2px;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 
 .resume__content{
   display:grid;
@@ -334,36 +287,57 @@ body{
   gap:2rem;
 }
 
-/* CARD */
+/* =========================
+   CARD
+========================= */
 
 .resume__card{
   position:relative;
 
+  padding:
+  2.7rem
+  2.4rem;
+
+  border-radius:38px;
+
   overflow:hidden;
 
-  border-radius:34px;
-
-  padding:
-  2.8rem;
-
   background:
-  rgba(255,255,255,.045);
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.03)
+  );
 
   border:
-  1px solid rgba(255,255,255,.07);
+  1px solid rgba(255,255,255,.08);
 
-  backdrop-filter:blur(24px);
+  backdrop-filter:
+  blur(30px);
 
-  box-shadow:
-  0 30px 100px rgba(0,0,0,.38);
+  transform-style:
+  preserve-3d;
 
   transition:
-  .5s cubic-bezier(.16,1,.3,1);
+  .6s cubic-bezier(.16,1,.3,1);
+
+  box-shadow:
+  0 25px 90px rgba(0,0,0,.45);
 }
 
-/* CARD BLUR */
+.resume__card:hover{
+  transform:
+  translateY(-10px);
 
-.resume__cardBlur{
+  border-color:
+  rgba(215,177,138,.25);
+
+  box-shadow:
+  0 40px 120px rgba(0,0,0,.55),
+  0 0 50px rgba(215,177,138,.08);
+}
+
+.resume__cardGlow{
   position:absolute;
 
   width:240px;
@@ -374,7 +348,7 @@ body{
   background:
   radial-gradient(
     circle,
-    rgba(193,154,107,.18),
+    rgba(215,177,138,.18),
     transparent 70%
   );
 
@@ -382,31 +356,28 @@ body{
   right:-100px;
 
   filter:blur(20px);
+
+  transition:.6s ease;
 }
 
-/* CARD NUMBER */
-
-.resume__cardNumber{
-  position:absolute;
-
-  top:25px;
-  right:28px;
-
-  font-size:4rem;
-  font-weight:800;
-
-  color:
-  rgba(255,255,255,.04);
+.resume__card:hover
+.resume__cardGlow{
+  transform:scale(1.2);
 }
 
-/* RTL NUMBER */
+.resume__cardLine{
+  width:90px;
+  height:2px;
 
-.resume.rtl .resume__cardNumber{
-  right:auto;
-  left:28px;
+  margin-bottom:2rem;
+
+  background:
+  linear-gradient(
+    to right,
+    #c8a47e,
+    transparent
+  );
 }
-
-/* CARD TITLE */
 
 .resume__card h2{
   position:relative;
@@ -414,45 +385,40 @@ body{
 
   font-size:2rem;
 
+  line-height:1.3;
+
   margin-bottom:1.5rem;
 
-  line-height:1.2;
+  color:white;
 }
-
-/* CARD TEXT */
 
 .resume__card p{
   position:relative;
   z-index:2;
 
   color:
-  rgba(255,255,255,.7);
+  rgba(255,255,255,.72);
 
-  line-height:2.1;
+  line-height:2.2;
 
   font-size:1rem;
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1000px){
 
   .resume__content{
     grid-template-columns:1fr;
   }
-
 }
 
 @media(max-width:768px){
 
   .resume{
-    padding:
-    5rem
-    1rem;
-  }
-
-  .resume__hero{
-    margin-bottom:4rem;
+    padding:6rem 1rem;
   }
 
   .resume__hero h1{
@@ -460,31 +426,60 @@ body{
     letter-spacing:-2px;
   }
 
-  .resume__hero p{
-    font-size:.9rem;
-    letter-spacing:1px;
-  }
-
   .resume__card{
-    padding:2rem 1.5rem;
-    border-radius:28px;
+    padding:
+    2rem
+    1.5rem;
+
+    border-radius:30px;
   }
 
   .resume__card h2{
-    font-size:1.5rem;
+    font-size:1.45rem;
   }
 
   .resume__card p{
-    font-size:.95rem;
-    line-height:2;
+    font-size:.94rem;
+    line-height:2.05;
   }
 
-  .resume__cardNumber{
+  .resume__lang{
+    gap:.4rem;
+    padding:.4rem;
+  }
+
+  .resume__lang button{
+    width:100px;
+    height:48px;
+
+    font-size:.8rem;
+  }
+}
+
+@media(max-width:480px){
+
+  .resume__hero h1{
     font-size:3rem;
   }
 
-  .resume__langSwitcher{
-    transform:scale(.92);
+  .resume__hero p{
+    font-size:.82rem;
   }
 
+  .resume__card{
+    border-radius:26px;
+  }
+
+  .resume__card h2{
+    font-size:1.2rem;
+  }
+
+  .resume__card p{
+    font-size:.88rem;
+  }
+
+  .resume__lang button{
+    width:84px;
+    font-size:.72rem;
+  }
 }

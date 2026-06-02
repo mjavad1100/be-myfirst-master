@@ -17,18 +17,13 @@ const Services = () => {
 
           <div className="services__header">
 
-            <span className="services__tag">
-              Creative Portfolio
-            </span>
+         
 
             <h1>
               Visual Stories
             </h1>
 
-            <p>
-              Cinematic photography, luxury visuals and
-              modern storytelling crafted with emotion.
-            </p>
+        
 
           </div>
 
