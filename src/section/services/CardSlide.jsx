@@ -1,24 +1,17 @@
-import './services.css';
-const CardSlide = (data) => {
-    const {title, image,id} = data;
-    return (
-        <div className="image-flip">
-            <div className="mainflip">
-                <div className="frontside">
-                    <img src={image} id={id} alt="third" />
-                </div>
-                <div className="backside hoverclass">
-                    <div className="card card-body text-center p-5 mt-4">
-                        <p className="card-text text-white text-justify">
-                            {title}
-                        </p>
-                        <a href='#portfolio' className='bttn light'>More ...</a>
+import './cardslide.css';
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+const CardSlide = ({ image, titles }) => {
+  return (
+    <div className="card-slide">
+      <img src={image} alt={titles[0]} />
+
+      <div className="card-slide__titles">
+        {titles.map((title, index) => (
+          <h3 key={index}>{title}</h3>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default CardSlide;

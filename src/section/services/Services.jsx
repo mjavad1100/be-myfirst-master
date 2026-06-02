@@ -1,107 +1,101 @@
-import './services.css'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import CardSlide from './CardSlide';
+'use client';
+
+import { useState } from 'react';
+import './services.css';
 import { data } from './data';
 
-
-
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-
-
-
-
 const Services = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
 
+  return (
+    <>
+      <section className="services">
 
-    return (
-        <section>
+        <div className="services__noise"></div>
 
-            <Container>
-                <div className="mytitle2">
-                    <Row>
-                        <Col>
-                            <h1>Portfolio</h1>
-                        </Col>
-                    </Row>
+        <div className="services__container">
+
+          <div className="services__header">
+
+            <span className="services__tag">
+              Creative Portfolio
+            </span>
+
+            <h1>
+              Visual Stories
+            </h1>
+
+            <p>
+              Cinematic photography, luxury visuals and
+              modern storytelling crafted with emotion.
+            </p>
+
+          </div>
+
+          <div className="services__grid">
+
+            {data.map((item, index) => (
+              <div
+                className={`services__card ${
+                  index === 0 ? 'services__card--large' : ''
+                }`}
+                key={item.id}
+                onClick={() => setSelectedImage(item.image)}
+              >
+
+                <img
+                  src={item.image}
+                  alt={item.titles[0]}
+                />
+
+                <div className="services__overlay"></div>
+
+                <div className="services__content">
+
+                  <span className="services__number">
+                    0{item.id}
+                  </span>
+
+                  <div className="services__titles">
+                    {item.titles.map((title, index) => (
+                      <h3 key={index}>
+                        {title}
+                      </h3>
+                    ))}
+                  </div>
+
                 </div>
-                <Tabs
-                    defaultActiveKey="home"
-                    id="justify-tab-example"
-                    className="mb-3"
-                    justify
-                >
-                    <Tab eventKey="home" title="Photographer" tabClassName='colortab'>
-                        <Row>
-                            <Col xs={12} sm={4} md={8}>
 
-                                <CardSlide data={data} key={data[0].id} image={data[0].image} title={data[0].title} />
+              </div>
+            ))}
 
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[1].id} image={data[1].image} title={data[1].title} />
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[2].id} image={data[2].image} title={data[2].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[3].id} image={data[3].image} title={data[3].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[4].id} image={data[4].image} title={data[4].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={6}>
-                                <CardSlide data={data} key={data[7].id} image={data[5].image} title={data[7].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={6}>
-                                <CardSlide data={data} key={data[7].id} image={data[6].image} title={data[7].title} />
-                            </Col>
-                        </Row>
+          </div>
 
-                    </Tab>
-                    <Tab eventKey="profile" title="Direct" tabClassName='colortab'>
-                        <Row>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[6].id} image={data[6].image} title={data[6].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[7].id} image={data[7].image} title={data[7].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[8].id} image={data[8].image} title={data[8].title} />
-                            </Col>
+        </div>
 
+      </section>
 
-                        </Row>
-                    </Tab>
-                    <Tab eventKey="longer-tab" title="Compilation" tabClassName='colortab'>
-                        <Row>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[0].id} image={data[0].image} title={data[0].title} />
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[1].id} image={data[1].image} title={data[1].title} />
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="services__modal"
+          onClick={() => setSelectedImage(null)}
+        >
 
-                            </Col>
-                            <Col xs={12} sm={4} md={4}>
-                                <CardSlide data={data} key={data[7].id} image={data[7].image} title={data[7].title} />
+          <button className="services__close">
+            ×
+          </button>
 
-                            </Col>
+          <img
+            src={selectedImage}
+            alt="preview"
+            className="services__modal-image"
+          />
 
-
-                        </Row>
-                    </Tab>
-                </Tabs>
-
-
-            </Container>
-        </section>
-
-    );
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Services;

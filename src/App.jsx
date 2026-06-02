@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap-grid.css';
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import Resume from './section/resume/resume';
+import Services from './section/services/Services';
+
 
 const App = () => {
     return (
@@ -12,6 +14,7 @@ const App = () => {
             <Analytics/>
                 <About />
                 <Resume />
+                <Services/>
             </main>
         </div>
     );
