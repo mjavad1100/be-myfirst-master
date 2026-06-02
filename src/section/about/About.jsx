@@ -6,11 +6,6 @@ import 'animate.css';
 
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-import {
-  HiArrowLongRight,
-  HiPlay,
- 
-} from 'react-icons/hi2';
 
 const About = () => {
   return (
