@@ -248,128 +248,164 @@ const Resume = () => {
 };
 
 // ================== PERSIAN ==================
+// ================== PERSIAN ==================
 
 const persianParagraphs = [
   {
     title: 'سوابق حرفه‌ای',
     text:
-      'اینجانب امیرحسن کاشانی متولد 1383 در تهران. شروع فعالیت حرفه‌ای از کافه رستوران عمارت یار واقع در تئاتر شهر خیابان رشت، سپس همکاری با کافه باغ بارمان. اولین همکاری به عنوان کاپیتان اردر با مجموعه رستوران همراه با راه‌اندازی نیما قاسمیان و شف عمران...',
+      'اینجانب امیرحسن کاشانی متولد سال ۱۳۸۳ در تهران هستم. فعالیت حرفه‌ای خود را در حوزه کافه و رستوران از مجموعه کافه رستوران عمارت یار واقع در محدوده تئاتر شهر و خیابان رشت آغاز کردم. پس از کسب تجربه در زمینه سرویس‌دهی، ارتباط با مشتری و اصول هاسپیتلیتی، همکاری خود را با کافه باغ بارمان ادامه دادم. اولین فعالیت جدی و حرفه‌ای بنده به عنوان کاپیتان اردر در کنار تیم‌های حرفه‌ای آقای نیما قاسمیان و شف عمران شکل گرفت. این دوره نقطه شروع یادگیری اصول سرویس لاکچری، مدیریت سالن، برخورد حرفه‌ای با مهمانان VIP و هماهنگی تیمی در فضای حرفه‌ای رستوران بود.',
     image: Img1,
   },
 
   {
     title: 'تجربه رستوران و تیم‌های حرفه‌ای (نیما تیم)',
     text:
-      'همکاری زنجیره‌ای با تیم آقای قاسمیان در رستوران میدل با مدیریت محلا شریفی، سپس رستوران‌های زنجیره‌ای فودینو سروستان بخش بیکری به عنوان کاپیتان اردر و هد ویتر تایم صبح...',
+      'همکاری مستمر بنده با تیم‌های حرفه‌ای آقای نیما قاسمیان در چندین پروژه و مجموعه رستورانی شکل گرفت. یکی از مهم‌ترین این تجربیات، فعالیت در رستوران میدل با مدیریت خانم محلا شریفی بود. پس از آن در مجموعه رستوران‌های زنجیره‌ای فودینو سروستان، در بخش بیکری به عنوان کاپیتان اردر و هد ویتر شیفت صبح فعالیت داشتم. این تجربه‌ها باعث تقویت مهارت‌های بنده در مدیریت نیرو، ارتباط با مشتری، هماهنگی سرویس و حفظ کیفیت خدمات در شرایط شلوغ و حرفه‌ای شد.',
     image: Img2,
   },
 
   {
     title: 'رستوران خصوصی بانک سامان',
     text:
-      'شروع همکاری حرفه ای با تیم تشریفات و هاسپیتلیتی آقای آرمین پالگانه در رستوران خصوصی رده بالای پرسنل بانک سامان...',
+      'شروع همکاری حرفه‌ای بنده با تیم تشریفات و هاسپیتلیتی آقای آرمین پالگانه در رستوران خصوصی ویژه مدیران و پرسنل ارشد بانک سامان، یکی از مهم‌ترین مراحل مسیر حرفه‌ای من بود. فضای کاری این مجموعه در سطح بسیار حرفه‌ای و لوکس قرار داشت و استانداردهای بالایی در زمینه تشریفات، پذیرایی رسمی و مدیریت مهمانان VIP رعایت می‌شد. حضور در این مجموعه باعث شد تجربه ارزشمندی در زمینه سرویس رسمی، رفتار سازمانی، نظم کاری و مدیریت مهمانان سطح بالا کسب کنم.',
     image: Img3,
   },
 
   {
-    title: 'همکاری و برگزاری ایونت های سفارت',
+    title: 'همکاری و برگزاری ایونت‌های سفارت',
     text:
-      'شروع ایونت‌های سفارت نروژ، هند، ژاپن، اسلوونی و نیوزلند به سرپرستی آقای پالگانه و شف هومن الوندی...',
+      'بنده در برگزاری و اجرای ایونت‌ها و مراسم‌های رسمی سفارت‌های نروژ، هند، ژاپن، اسلوونی و نیوزلند همکاری داشتم. این رویدادها تحت سرپرستی آقای پالگانه و شف هومن الوندی برگزار می‌شد و نیازمند دقت بالا، رفتار حرفه‌ای، هماهنگی تیمی و رعایت کامل اصول تشریفات بین‌المللی بود. تجربه حضور در چنین مراسم‌هایی باعث شد مهارت بنده در مدیریت مهمانان خارجی، رعایت استانداردهای جهانی سرویس و فعالیت در محیط‌های دیپلماتیک تقویت شود.',
     image: Img4,
   },
 
   {
     title: 'رویدادهای لوکس و برج ریبون',
     text:
-      'همکاری اختصاصی به عنوان نیروی تشریفات با برج ریبون مکان برگزاری رویداد های مهم تشریفات ایران...',
+      'همکاری اختصاصی بنده با برج ریبون به عنوان نیروی تشریفات و هاسپیتلیتی در رویدادها و مراسم‌های سطح بالای ایران انجام شد. برج ریبون یکی از مهم‌ترین مکان‌های برگزاری ایونت‌های لوکس، مراسم‌های رسمی و گردهمایی‌های VIP به شمار می‌رود. در این مجموعه مسئولیت‌هایی مانند پذیرایی رسمی، مدیریت مهمانان ویژه، هماهنگی اجرایی و حفظ کیفیت سرویس بر عهده بنده بود. این تجربه نقش مهمی در افزایش توانایی بنده برای فعالیت در فضاهای لوکس و پر فشار داشت.',
     image: Img5,
   },
 
   {
     title: 'تجربه هتل و رستوران (هتل پنج ستاره آراز)',
     text:
-      'دعوت از جانب آقای بیژن الوندی مدیر اجرایی هتل آراز برای همکاری در نوروز 1404...',
+      'در نوروز ۱۴۰۴ به دعوت آقای بیژن الوندی مدیر اجرایی هتل پنج ستاره آراز، همکاری خود را با این مجموعه آغاز کردم. فعالیت در فضای یک هتل پنج ستاره تجربه‌ای ارزشمند در زمینه هتلداری، سرویس حرفه‌ای، مدیریت رضایت مهمانان و همکاری تیمی در سطح بین‌المللی برای بنده ایجاد کرد. این همکاری باعث شد آشنایی بیشتری با استانداردهای جهانی هاسپیتلیتی و نحوه ارائه خدمات در مجموعه‌های لوکس هتل و رستوران پیدا کنم.',
     image: Img6,
   },
 
   {
     title: 'راندوو پوینت',
     text:
-      'همکاری با رستوران راندوو پوینت و تیم آشپزخانه میلاد میدانی به عنوان هد شیفت...',
+      'همکاری بنده با رستوران راندوو پوینت و تیم آشپزخانه شف میلاد میدانی به عنوان هد شیفت انجام شد. در این مجموعه مسئولیت‌هایی مانند مدیریت نیروها، هماهنگی میان سالن و آشپزخانه، کنترل کیفیت سرویس، پیگیری رضایت مشتریان و مدیریت روند اجرایی شیفت بر عهده بنده بود. این تجربه باعث شد توانایی بنده در مدیریت بحران، تصمیم‌گیری سریع و حفظ نظم در شرایط شلوغ و حرفه‌ای تقویت شود.',
     image: Img7,
   },
 
   {
     title: 'افتخار همکاری با بزرگان صنعت هاسپیتلیتی',
     text:
-      'همکاری با شف میلاد میدانی، شف هومن الوندی، شف تاشکیران، شف کفایت بیگی...',
+      'در طول مسیر حرفه‌ای خود افتخار همکاری با افراد و شف‌های مطرح حوزه هاسپیتلیتی و رستوران را داشته‌ام؛ از جمله شف میلاد میدانی، شف هومن الوندی، شف تاشکیران، شف کفایت بیگی، شف عمران و دیگر افراد حرفه‌ای این صنعت. همکاری در کنار این افراد باعث شد تجربه‌های ارزشمندی در زمینه سرویس حرفه‌ای، مدیریت رستوران، برگزاری ایونت‌های لوکس، استانداردهای جهانی پذیرایی و هماهنگی تیمی کسب کنم.',
     image: Img8,
   },
 
   {
     title: 'شرایط کاری حال بنده',
     text:
-      'نقش گاردن: همکاری با آقای پالگانه به عنوان نفرات اصلی برای راه اندازی رستوران نقش گاردن...',
+      'در حال حاضر همکاری بنده با آقای آرمین پالگانه به عنوان یکی از اعضای اصلی راه‌اندازی و توسعه رستوران نقش گاردن ادامه دارد. مسئولیت‌های بنده شامل هماهنگی نیروها، مشارکت در طراحی روند سرویس، برنامه‌ریزی تشریفات و کمک به ایجاد استانداردهای حرفه‌ای در مجموعه است. این پروژه یکی از مهم‌ترین مراحل رشد حرفه‌ای بنده در صنعت رستوران و هاسپیتلیتی محسوب می‌شود.',
     image: Img9,
   },
 
   {
     title: 'توانایی‌های کلیدی',
     text:
-      'یکی از مهم‌ترین توانایی‌های بنده در برگزاری ایونت‌ها، گردهم آوردن بهترین نیروهای تشریفات و هماهنگی اجرایی رویدادها است...',
+      'یکی از مهم‌ترین توانایی‌های بنده در حوزه هاسپیتلیتی و برگزاری رویدادها، توانایی جمع‌آوری و هماهنگ کردن نیروهای حرفه‌ای تشریفات برای اجرای ایونت‌های لوکس است. تجربه بالایی در مدیریت مهمانان VIP، سرویس فاین داینینگ، هماهنگی تیمی، مدیریت سالن، ارتباط با مشتری و اجرای رویدادهای رسمی دارم. همچنین توانایی بالایی در سازگاری با شرایط پر فشار، دقت در جزئیات و حفظ کیفیت خدمات در سطح حرفه‌ای دارم.',
     image: Img10,
   },
 
   {
     title: 'فعالیت‌های همزمان',
     text:
-      'همزمان با فعالیت حرفه‌ای در حوزه کافه رستوران، در زمینه آرایشگری و زیبایی نیز فعالیت حرفه‌ای دارم.',
+      'همزمان با فعالیت حرفه‌ای در حوزه کافه، رستوران و هاسپیتلیتی، در زمینه آرایشگری و زیبایی نیز به صورت حرفه‌ای فعالیت دارم. فعالیت در این حوزه باعث تقویت خلاقیت، دقت، مهارت ارتباط با مشتری، توجه به جزئیات و درک بهتر رضایت مشتری در بنده شده است. این تجربیات به شکل مستقیم در بهبود کیفیت عملکرد حرفه‌ای من در صنعت هاسپیتلیتی نیز تأثیر مثبت داشته‌اند.',
     image: Img10,
   },
 ];
-
 // ================== ENGLISH ==================
 
-const englishParagraphs = persianParagraphs.map((item, i) => ({
-  title: [
-    'Professional Background',
-    'Restaurant & Professional Teams',
-    'Saman Bank Business Lounge',
-    'Embassy Events',
-    'Luxury Events & Ribbon Tower',
-    'Araz Five-Star Hotel',
-    'Rendezvous Point',
-    'Hospitality Industry Leaders',
-    'Current Position',
-    'Key Skills',
-    'Additional Activities',
-  ][i],
+const englishParagraphs = [
+  {
+    title: 'Professional Background',
+    text:
+      'My name is Amirhasan Kashani, born in Tehran in 2004. I started my professional career in the hospitality industry at Emarat Yar Café Restaurant located near City Theater on Rasht Street. After gaining valuable experience in customer service and luxury hospitality, I continued my journey with Barman Garden Café. My first major professional role as an Order Captain began through collaboration with hospitality teams led by Nima Ghasemian and Chef Omran, where I developed advanced skills in VIP guest management, fine dining service, team coordination, and high-standard restaurant operations.',
+    image: Img1,
+  },
 
-  text: [
-    'Amirhasan Kashani born in Tehran in 2004. Started his professional career at Emarat Yar Café Restaurant...',
-    
-    'Collaborated with Nima Ghasemian’s hospitality teams including Middle Restaurant...',
-    
-    'Professional collaboration with Armin Palegane’s luxury hospitality team...',
-    
-    'Participated in embassy events for Norway, India, Japan, Slovenia and New Zealand...',
-    
-    'Worked with Ribbon Tower as luxury hospitality staff for high-end ceremonies...',
-    
-    'Invited by Bijan Alavandi executive manager of Araz Hotel during Nowruz 1404...',
-    
-    'Worked alongside Chef Milad Meydani as Head Shift Supervisor...',
-    
-    'Collaborated with major chefs including Chef Hooman Alavandi, Chef Omran...',
-    
-    'Collaborating in launching Naghsh Garden Restaurant under Armin Palegane...',
-    
-    'Strong ability in gathering elite hospitality staff and coordinating VIP events...',
-    
-    'Professional activity in beauty and hairstyling alongside hospitality career...',
-  ][i],
+  {
+    title: 'Restaurant Experience & Professional Teams',
+    text:
+      'I collaborated continuously with Mr. Nima Ghasemian’s hospitality teams across several high-level restaurant projects. One of the important experiences was working at Middle Restaurant under the management of Mahla Sharifi. Later, I joined the Foodino Servestan chain restaurants in the bakery section, serving as Order Captain and Morning Shift Head Waiter. These experiences strengthened my abilities in leadership, guest communication, service management, and maintaining luxury hospitality standards during busy operations.',
+    image: Img2,
+  },
 
-  image: item.image,
-}));
+  {
+    title: 'Saman Bank Private Restaurant',
+    text:
+      'I began a professional collaboration with Mr. Armin Palegane’s hospitality and ceremonial team at the exclusive private restaurant dedicated to senior personnel and executives of Saman Bank. This environment introduced me to elite-level hospitality services, business-class etiquette, formal VIP hosting, and highly professional event management standards. Working in such a prestigious environment significantly improved my precision, discipline, and understanding of luxury guest experiences.',
+    image: Img3,
+  },
 
+  {
+    title: 'Embassy Events & International Ceremonies',
+    text:
+      'I participated in organizing and managing embassy events and diplomatic ceremonies for the embassies of Norway, India, Japan, Slovenia, and New Zealand under the supervision of Mr. Palegane and Chef Hooman Alavandi. These international events required exceptional professionalism, attention to detail, teamwork, and the ability to provide premium hospitality services for diplomats, ambassadors, and distinguished international guests.',
+    image: Img4,
+  },
+
+  {
+    title: 'Luxury Events & Ribbon Tower',
+    text:
+      'I worked as part of the exclusive ceremonial hospitality staff at Ribbon Tower, one of the important venues for luxury and high-profile events in Iran. This role involved managing VIP guests, formal receptions, event coordination, and maintaining exceptional hospitality standards during prestigious ceremonies and gatherings. The experience enhanced my ability to work efficiently under pressure while preserving elegance and professionalism.',
+    image: Img5,
+  },
+
+  {
+    title: 'Hotel & Fine Dining Experience – Araz Five-Star Hotel',
+    text:
+      'I was invited by Mr. Bijan Alavandi, Executive Manager of Araz Five-Star Hotel, to collaborate during the Nowruz 1404 holiday season. Working in a luxury five-star hotel environment provided me with valuable experience in high-end hotel hospitality, guest satisfaction management, professional teamwork, and international service standards. This opportunity further strengthened my understanding of luxury hospitality operations and premium customer experiences.',
+    image: Img6,
+  },
+
+  {
+    title: 'Rendezvous Point Restaurant',
+    text:
+      'I collaborated with Rendezvous Point Restaurant alongside Chef Milad Meydani’s kitchen team as a Head Shift Supervisor. My responsibilities included team management, service coordination, maintaining operational quality, handling guest satisfaction, and ensuring smooth communication between kitchen and service staff. This role helped me improve my leadership abilities and operational decision-making skills in fast-paced restaurant environments.',
+    image: Img7,
+  },
+
+  {
+    title: 'Collaboration with Hospitality Industry Leaders',
+    text:
+      'Throughout my career, I have had the honor of collaborating with respected professionals and chefs in the hospitality industry, including Chef Milad Meydani, Chef Hooman Alavandi, Chef Tashkiran, Chef Kefayat Beigi, Chef Omran, and other experienced hospitality experts. Working alongside these professionals allowed me to learn advanced hospitality techniques, luxury service standards, event management strategies, and professional team coordination at the highest level.',
+    image: Img8,
+  },
+
+  {
+    title: 'Current Professional Position',
+    text:
+      'Currently, I am collaborating with Mr. Armin Palegane as one of the core members involved in launching and developing Naghsh Garden Restaurant. My role includes participation in hospitality planning, team coordination, service development, and establishing luxury operational standards. This project represents an important step in my professional growth within the hospitality and restaurant industry.',
+    image: Img9,
+  },
+
+  {
+    title: 'Key Skills & Strengths',
+    text:
+      'One of my strongest abilities in hospitality and event management is gathering highly professional ceremonial staff and coordinating luxury events with precision and discipline. I have strong experience in VIP guest management, fine dining service, event operations, teamwork leadership, customer relations, and maintaining high-quality hospitality standards. I am highly adaptable, detail-oriented, and capable of performing efficiently in fast-paced luxury environments.',
+    image: Img10,
+  },
+
+  {
+    title: 'Additional Professional Activities',
+    text:
+      'Alongside my professional career in cafés, restaurants, and luxury hospitality, I am also professionally active in the beauty and hairstyling industry. This parallel experience has strengthened my creativity, communication skills, attention to detail, personal presentation, and understanding of customer satisfaction, all of which contribute positively to my hospitality career and professional growth.',
+    image: Img10,
+  },
+];
 export default Resume;

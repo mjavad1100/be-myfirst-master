@@ -1,38 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
 
+/* ================= RESET ================= */
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-body{
-  background:#050505;
-  overflow-x:hidden;
-  font-family:'Inter',sans-serif;
+html{
+  scroll-behavior:smooth;
 }
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#050505;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ================= MAIN ================= */
 
 .resume{
   position:relative;
   min-height:100vh;
-  padding:8rem 1.2rem;
+
+  padding:
+  7rem
+  2rem;
+
   overflow:hidden;
 
   background:
-  radial-gradient(circle at top,#181818 0%,#070707 45%,#020202 100%);
-
-  color:white;
+  radial-gradient(
+    circle at top,
+    #181818 0%,
+    #070707 45%,
+    #020202 100%
+  );
 }
+
+/* ================= CONTAINER ================= */
 
 .resume__container{
   position:relative;
   z-index:5;
 
-  width:min(1450px,100%);
+  width:min(1500px,100%);
   margin:auto;
 }
 
-/* BACKGROUND */
+/* ================= BACKGROUND ================= */
 
 .resume__noise{
   position:absolute;
@@ -58,52 +76,74 @@ body{
 .resume__gradient{
   position:absolute;
 
-  width:450px;
-  height:450px;
+  width:500px;
+  height:500px;
 
   border-radius:50%;
 
-  filter:blur(120px);
+  filter:blur(130px);
 
-  opacity:.12;
+  opacity:.15;
+
+  animation:floating 12s ease-in-out infinite;
 }
 
 .gradient1{
-  top:-120px;
-  left:-120px;
+  top:-180px;
+  left:-140px;
 
   background:#d7b18a;
 }
 
 .gradient2{
-  bottom:-120px;
-  right:-120px;
+  bottom:-180px;
+  right:-140px;
 
   background:#8b5e3b;
+
+  animation-delay:4s;
 }
 
-/* HERO */
+@keyframes floating{
+
+  0%,100%{
+    transform:
+    translateY(0)
+    translateX(0);
+  }
+
+  50%{
+    transform:
+    translateY(-50px)
+    translateX(40px);
+  }
+}
+
+/* ================= HERO ================= */
 
 .resume__hero{
   text-align:center;
+
   margin-bottom:6rem;
 }
 
 .resume__hero span{
+  display:inline-block;
+
   color:#d7b18a;
 
-  letter-spacing:3px;
+  font-size:.82rem;
 
   text-transform:uppercase;
 
-  font-size:.8rem;
+  letter-spacing:5px;
+
+  margin-bottom:1rem;
 }
 
 .resume__hero h1{
-  margin-top:1rem;
-
   font-size:
-  clamp(4rem,10vw,8rem);
+  clamp(4.5rem,9vw,8rem);
 
   line-height:.9;
 
@@ -114,40 +154,118 @@ body{
   serif;
 
   background:
-  linear-gradient(135deg,#fff,#d7b18a,#9d704e);
+  linear-gradient(
+    135deg,
+    #ffffff,
+    #d7b18a,
+    #8b5e3b
+  );
 
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+
+  text-shadow:
+  0 0 30px rgba(215,177,138,.12);
 }
 
 .resume__hero p{
   margin-top:1.5rem;
 
   color:
-  rgba(255,255,255,.55);
+  rgba(255,255,255,.58);
 
   letter-spacing:2px;
+
+  font-size:.95rem;
 }
 
-/* CONTENT */
+/* ================= LANGUAGE ================= */
+
+.resume__langWrap{
+  position:sticky;
+  top:25px;
+
+  z-index:100;
+
+  display:flex;
+  justify-content:center;
+
+  margin-bottom:5rem;
+}
+
+.resume__lang{
+  display:flex;
+  gap:.5rem;
+
+  padding:.55rem;
+
+  border-radius:999px;
+
+  background:
+  rgba(255,255,255,.05);
+
+  border:
+  1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.35);
+}
+
+.resume__lang button{
+  width:115px;
+  height:48px;
+
+  border:none;
+  border-radius:999px;
+
+  background:transparent;
+
+  color:
+  rgba(255,255,255,.65);
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+}
+
+.resume__lang button:hover{
+  color:white;
+}
+
+.resume__lang button.active{
+  background:
+  linear-gradient(
+    135deg,
+    #d7b18a,
+    #9d704e
+  );
+
+  color:#050505;
+}
+
+/* ================= CONTENT GRID ================= */
 
 .resume__content{
   display:grid;
 
   grid-template-columns:
-  repeat(2,1fr);
+  repeat(auto-fit,minmax(360px,1fr));
 
   gap:2rem;
 }
 
-/* CARD */
+/* ================= CARD ================= */
 
 .resume__card{
   position:relative;
 
   overflow:hidden;
 
-  border-radius:34px;
+  border-radius:30px;
 
   background:
   linear-gradient(
@@ -159,19 +277,53 @@ body{
   border:
   1px solid rgba(255,255,255,.08);
 
-  backdrop-filter:blur(30px);
-
-  transition:.6s cubic-bezier(.16,1,.3,1);
+  backdrop-filter:blur(25px);
 
   box-shadow:
-  0 30px 90px rgba(0,0,0,.45);
+  0 25px 70px rgba(0,0,0,.45);
+
+  transition:
+  transform .6s cubic-bezier(.16,1,.3,1),
+  box-shadow .6s ease,
+  border-color .4s ease;
+}
+
+.resume__card::before{
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent
+  );
+
+  transform:
+  translateX(-100%);
+
+  transition:1s ease;
+
+  z-index:2;
+}
+
+.resume__card:hover::before{
+  transform:
+  translateX(100%);
 }
 
 .resume__card:hover{
-  transform:translateY(-12px);
+  transform:
+  translateY(-12px);
 
   border-color:
-  rgba(215,177,138,.25);
+  rgba(215,177,138,.22);
+
+  box-shadow:
+  0 40px 100px rgba(0,0,0,.6);
 }
 
 .resume__cardGlow{
@@ -198,13 +350,13 @@ body{
   flex-direction:column;
 }
 
-/* IMAGE */
+/* ================= IMAGE ================= */
 
 .resume__imageWrap{
   position:relative;
 
   width:100%;
-  height:420px;
+  height:380px;
 
   overflow:hidden;
 
@@ -220,12 +372,18 @@ body{
   object-fit:cover;
 
   transition:
-  transform 1.2s ease;
+  transform 1.2s ease,
+  filter .6s ease;
 }
 
 .resume__card:hover
 .resume__imageWrap img{
-  transform:scale(1.08);
+  transform:
+  scale(1.06);
+
+  filter:
+  brightness(1.04)
+  contrast(1.05);
 }
 
 .resume__imageOverlay{
@@ -235,16 +393,16 @@ body{
   background:
   linear-gradient(
     to top,
-    rgba(0,0,0,.72),
-    transparent 50%
+    rgba(0,0,0,.75),
+    transparent 55%
   );
 }
 
 .resume__zoom{
   position:absolute;
 
-  top:20px;
-  right:20px;
+  top:18px;
+  right:18px;
 
   width:48px;
   height:48px;
@@ -258,14 +416,14 @@ body{
   background:
   rgba(255,255,255,.12);
 
-  backdrop-filter:blur(10px);
-
   border:
   1px solid rgba(255,255,255,.15);
 
+  backdrop-filter:blur(12px);
+
   color:white;
 
-  font-size:1.2rem;
+  font-size:1.15rem;
 
   z-index:5;
 
@@ -273,7 +431,7 @@ body{
 
   transform:translateY(10px);
 
-  transition:.4s ease;
+  transition:.35s ease;
 }
 
 .resume__card:hover
@@ -282,19 +440,19 @@ body{
   transform:translateY(0);
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
 
 .resume__text{
   padding:
-  2.4rem
-  2rem;
+  2rem
+  1.8rem;
 }
 
 .resume__line{
-  width:90px;
+  width:85px;
   height:2px;
 
-  margin-bottom:1.5rem;
+  margin-bottom:1.2rem;
 
   background:
   linear-gradient(
@@ -308,16 +466,32 @@ body{
   font-size:1.7rem;
 
   margin-bottom:1rem;
+
+  line-height:1.4;
+
+  font-weight:700;
+
+  background:
+  linear-gradient(
+    135deg,
+    #fff,
+    #d7b18a
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .resume__text p{
   color:
   rgba(255,255,255,.72);
 
-  line-height:2.1;
+  line-height:2;
+
+  font-size:.98rem;
 }
 
-/* RTL */
+/* ================= RTL ================= */
 
 .resume.rtl{
   direction:rtl;
@@ -346,64 +520,7 @@ body{
   );
 }
 
-/* LANG */
-
-.resume__langWrap{
-  position:sticky;
-  top:24px;
-
-  z-index:100;
-
-  display:flex;
-  justify-content:center;
-
-  margin-bottom:5rem;
-}
-
-.resume__lang{
-  display:flex;
-  gap:.5rem;
-
-  padding:.5rem;
-
-  border-radius:999px;
-
-  background:
-  rgba(255,255,255,.05);
-
-  backdrop-filter:blur(20px);
-
-  border:
-  1px solid rgba(255,255,255,.08);
-}
-
-.resume__lang button{
-  width:110px;
-  height:48px;
-
-  border:none;
-  border-radius:999px;
-
-  background:transparent;
-
-  color:
-  rgba(255,255,255,.6);
-
-  font-weight:700;
-
-  cursor:pointer;
-
-  transition:.35s ease;
-}
-
-.resume__lang button.active{
-  background:
-  linear-gradient(135deg,#d7b18a,#9d704e);
-
-  color:#050505;
-}
-
-/* MODAL */
+/* ================= MODAL ================= */
 
 .resume__modal{
   position:fixed;
@@ -442,8 +559,8 @@ body{
   top:24px;
   right:24px;
 
-  width:58px;
-  height:58px;
+  width:56px;
+  height:56px;
 
   border:none;
   border-radius:50%;
@@ -451,18 +568,25 @@ body{
   background:
   rgba(255,255,255,.12);
 
+  backdrop-filter:blur(12px);
+
   color:white;
 
   font-size:2rem;
 
   cursor:pointer;
 
-  backdrop-filter:blur(12px);
+  transition:.35s ease;
 }
 
-/* ANIMATION */
+.resume__close:hover{
+  transform:rotate(90deg);
+}
+
+/* ================= ANIMATION ================= */
 
 @keyframes fadeIn{
+
   from{
     opacity:0;
   }
@@ -473,6 +597,7 @@ body{
 }
 
 @keyframes zoomIn{
+
   from{
     opacity:0;
     transform:scale(.9);
@@ -484,20 +609,34 @@ body{
   }
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:1000px){
+@media(max-width:1200px){
+
+  .resume__content{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+}
+
+@media(max-width:900px){
+
+  .resume{
+    padding:
+    6rem
+    1rem;
+  }
 
   .resume__content{
     grid-template-columns:1fr;
   }
+
+  .resume__imageWrap{
+    height:340px;
+  }
 }
 
 @media(max-width:768px){
-
-  .resume{
-    padding:6rem .9rem;
-  }
 
   .resume__hero{
     margin-bottom:4rem;
@@ -509,47 +648,69 @@ body{
     letter-spacing:-2px;
   }
 
-  .resume__imageWrap{
-    height:320px;
+  .resume__hero p{
+    font-size:.82rem;
+
+    line-height:2;
   }
 
   .resume__text{
     padding:
-    1.8rem
+    1.7rem
     1.3rem;
   }
 
   .resume__text h2{
-    font-size:1.25rem;
+    font-size:1.3rem;
   }
 
   .resume__text p{
     font-size:.92rem;
-
-    line-height:2;
   }
 }
 
 @media(max-width:480px){
 
+  .resume{
+    padding:
+    4rem
+    0;
+  }
+
+  .resume__container{
+    width:100%;
+  }
+
+  .resume__content{
+    gap:1.2rem;
+  }
+
   .resume__hero h1{
     font-size:3rem;
   }
 
-  .resume__imageWrap{
-    height:250px;
+  .resume__card{
+    border-radius:0;
   }
 
-  .resume__card{
-    border-radius:24px;
+  .resume__imageWrap{
+    height:260px;
+  }
+
+  .resume__text{
+    padding:
+    1.3rem
+    1rem;
   }
 
   .resume__text h2{
-    font-size:1.05rem;
+    font-size:1.08rem;
   }
 
   .resume__text p{
     font-size:.84rem;
+
+    line-height:1.95;
   }
 
   .resume__zoom{
@@ -560,5 +721,9 @@ body{
 
     top:12px;
     right:12px;
+  }
+
+  .resume__lang{
+    transform:scale(.9);
   }
 }
