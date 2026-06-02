@@ -2,60 +2,58 @@
 
 import './resume.css';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 70,
-  },
-
+  hidden: { opacity: 0, y: 70 },
   visible: (i = 1) => ({
     opacity: 1,
     y: 0,
-
-    transition: {
-      delay: i * 0.08,
-      duration: 1,
-      ease: [0.22, 1, 0.36, 1],
-    },
+    transition: { delay: i * 0.08, duration: 1, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
 const Resume = () => {
-
   const [lang, setLang] = useState('en');
+  const [activeScroll, setActiveScroll] = useState(false);
+  const resumeRef = useRef(null);
 
-  const content = lang === 'en'
-    ? englishParagraphs
-    : persianParagraphs;
+  const content = lang === 'en' ? englishParagraphs : persianParagraphs;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setActiveScroll(entry.isIntersecting);
+      },
+      { threshold: 0.3 } // وقتی ۳۰٪ از بخش رزومه وارد صفحه شد
+    );
+
+    if (resumeRef.current) observer.observe(resumeRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-
-<section
-  className={`resume ${lang === 'fa' ? 'rtl' : ''}`}
-  dir={lang === 'fa' ? 'rtl' : 'ltr'}
->
-
+    <section
+      ref={resumeRef}
+      className={`resume ${lang === 'fa' ? 'rtl' : ''}`}
+      dir={lang === 'fa' ? 'rtl' : 'ltr'}
+    >
       <div className="resume__noise"></div>
-
       <div className="resume__bg"></div>
 
       <div className="gradient gradient1"></div>
       <div className="gradient gradient2"></div>
 
       {/* LANGUAGE SWITCH */}
-
       <motion.div
-        className="resume__langWrap"
+        className={`resume__langWrap scroll-active ${activeScroll ? 'active' : ''}`}
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
       >
-
         <div className="resume__lang">
-
           <button
             className={lang === 'en' ? 'active' : ''}
             onClick={() => setLang('en')}
@@ -70,45 +68,26 @@ const Resume = () => {
             فارسی
           </button>
 
-          <div
-            className={`resume__langBg ${
-              lang === 'fa' ? 'right' : ''
-            }`}
-          ></div>
-
+          <div className={`resume__langBg ${lang === 'fa' ? 'right' : ''}`}></div>
         </div>
-
       </motion.div>
 
       {/* MAIN */}
-
       <div className="resume__container">
-
         {/* HERO */}
-
         <motion.div
           className="resume__hero"
           initial="hidden"
           animate="visible"
           variants={fadeUp}
         >
-
-          <h1>
-            Amirhasan Kashani
-          </h1>
-
-          <p>
-            VIP Hospitality • Fine Dining • Luxury Events
-          </p>
-
+          <h1>Resume</h1>
+          <p>VIP Hospitality • Fine Dining • Luxury Events</p>
         </motion.div>
 
         {/* CONTENT */}
-
         <div className="resume__content">
-
           {content.map((item, i) => (
-
             <motion.div
               key={i}
               custom={i}
@@ -118,29 +97,15 @@ const Resume = () => {
               variants={fadeUp}
               className="resume__card"
             >
-
               <div className="resume__cardGlow"></div>
-
               <div className="resume__cardLine"></div>
-
-              <h2>
-                {item.title}
-              </h2>
-
-              <p>
-                {item.text}
-              </p>
-
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
-
   );
 };
 
