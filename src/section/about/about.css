@@ -269,6 +269,7 @@ body{
   }
   .hero__description{
     font-size:.95rem;
+    margin-bottom: 50px;
     line-height:2;
   }
   .hero__buttons{
