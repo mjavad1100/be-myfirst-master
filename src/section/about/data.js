@@ -1,6 +1,5 @@
 import {
   AiOutlineInstagram,
-  AiOutlineTwitter,
   AiOutlineWhatsApp,
 } from 'react-icons/ai';
 
@@ -25,11 +24,6 @@ const data = [
     icon: <AiOutlineWhatsApp />,
   },
 
-  {
-    id: 4,
-    link: 'https://twitter.com/YOUR_USERNAME',
-    icon: <AiOutlineTwitter />,
-  },
 ];
 
 export default data;
