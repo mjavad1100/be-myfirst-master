@@ -712,4 +712,172 @@ body{
     height:270px;
   }
 
+} /* =========================
+   MENU
+========================= */
+
+.hero__menu{
+  position:fixed;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+
+  width:fit-content;
+
+  padding:14px 22px;
+
+  border:1px solid rgba(255,255,255,.08);
+
+  background:rgba(255,255,255,.04);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,.45),
+  inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.hero__menu-blur{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.08),
+    rgba(255,255,255,.02)
+  );
+
+  pointer-events:none;
+}
+
+.hero__menu-logo{
+  position:relative;
+
+  text-decoration:none;
+
+  color:#fff;
+
+  font-size:1rem;
+  font-weight:700;
+
+  letter-spacing:2px;
+
+  width:44px;
+  height:44px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.15),
+    rgba(255,255,255,.04)
+  );
+
+  border:1px solid rgba(255,255,255,.08);
+
+  transition:.4s;
+}
+
+.hero__menu-logo:hover{
+  transform:rotate(10deg) scale(1.08);
+}
+
+.hero__menu-links{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.hero__menu-link{
+  position:relative;
+
+  text-decoration:none;
+
+  color:rgba(255,255,255,.78);
+
+  font-size:.95rem;
+  font-weight:500;
+
+  padding:.8rem 1.1rem;
+
+  border-radius:14px;
+
+  transition:.35s;
+
+  overflow:hidden;
+}
+
+.hero__menu-link::before{
+  content:'';
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,.16),
+    rgba(255,255,255,.03)
+  );
+
+  opacity:0;
+
+  transition:.35s;
+}
+
+.hero__menu-link:hover::before{
+  opacity:1;
+}
+
+.hero__menu-link:hover{
+  color:#fff;
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width:768px){
+
+  .hero__menu{
+    width:calc(100% - 30px);
+
+    justify-content:space-between;
+
+    top:15px;
+
+    padding:12px 15px;
+  }
+
+  .hero__menu-links{
+    gap:.3rem;
+  }
+
+  .hero__menu-link{
+    padding:.7rem .8rem;
+
+    font-size:.82rem;
+  }
+
 }
