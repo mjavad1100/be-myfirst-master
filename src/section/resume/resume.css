@@ -23,9 +23,12 @@ body{
 
 .resume{
   position:relative;
+
   min-height:100vh;
+
   padding:8rem 2rem;
-  overflow:hidden;
+
+  overflow-x:hidden;
 
   background:
     radial-gradient(circle at top left, rgba(215,177,138,.14), transparent 30%),
@@ -108,19 +111,6 @@ body{
   margin-bottom:8rem;
 }
 
-.resume__hero span{
-  display:inline-block;
-
-  margin-bottom:1rem;
-
-  color:#d7b18a;
-
-  letter-spacing:5px;
-  text-transform:uppercase;
-
-  font-size:.78rem;
-}
-
 .resume__hero h1{
   font-size:clamp(4rem,10vw,8rem);
 
@@ -148,40 +138,50 @@ body{
 
   letter-spacing:2px;
 }
-/* ================= LANGUAGE ================= */
+
+/* =========================================================
+   ULTRA COMPACT FLOATING DOCK
+========================================================= */
 
 .resume__langWrap{
-  position:sticky;
+  position:fixed;
 
-  top:20px;
+  top:14px;
+  align-self:center;
+  justify-self:center;
 
-  z-index:999;
+  transform:translateX(-50%);
+
+  z-index:999999;
+
+  width:max-content;
 
   display:flex;
   justify-content:center;
 
-  margin-bottom:5rem;
-
   pointer-events:none;
 }
 
-/* CONTAINER */
+/* =========================================================
+   DOCK
+========================================================= */
 
 .resume__lang{
-  pointer-events:auto;
-
   position:relative;
+
+  pointer-events:auto;
 
   display:flex;
   align-items:center;
-  gap:.35rem;
+  gap:.28rem;
 
-  padding:.4rem;
+  padding:.3rem;
 
   border-radius:999px;
 
-  background:
-    rgba(10,10,10,.72);
+  overflow:hidden;
+
+  isolation:isolate;
 
   backdrop-filter:
     blur(18px)
@@ -191,21 +191,60 @@ body{
     blur(18px)
     saturate(180%);
 
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.07),
+      rgba(255,255,255,.025)
+    );
+
   border:
     1px solid rgba(255,255,255,.06);
 
   box-shadow:
-    0 10px 40px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.04);
+    0 8px 30px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 0 24px rgba(215,177,138,.05);
 }
 
-/* BUTTON */
+/* =========================================================
+   SOFT LIGHT
+========================================================= */
+
+.resume__lang::before{
+  content:'';
+
+  position:absolute;
+
+  width:140px;
+  height:140px;
+
+  top:-80px;
+  left:-30px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(215,177,138,.16),
+      transparent 70%
+    );
+
+  animation:
+    dockLight 7s linear infinite;
+
+  pointer-events:none;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
 
 .resume__lang button{
   position:relative;
+  z-index:2;
 
-  width:110px;
-  height:46px;
+  width:88px;
+  height:38px;
 
   border:none;
   outline:none;
@@ -215,40 +254,64 @@ body{
   background:transparent;
 
   color:
-    rgba(255,255,255,.45);
+    rgba(255,255,255,.5);
 
-  font-size:.9rem;
-  font-weight:600;
+  font-size:.74rem;
+  font-weight:700;
 
   letter-spacing:.2px;
 
   cursor:pointer;
 
+  overflow:hidden;
+
   transition:
-    background .3s ease,
-    color .3s ease,
-    transform .3s ease;
+    transform .28s ease,
+    color .28s ease,
+    background .28s ease,
+    box-shadow .28s ease,
+    border .28s ease;
 }
 
-/* HOVER */
+/* =========================================================
+   HOVER
+========================================================= */
 
 .resume__lang button:hover{
+
   color:white;
+
+  transform:
+    translateY(-1px)
+    scale(1.03);
 }
 
-/* ACTIVE */
+/* =========================================================
+   ACTIVE
+========================================================= */
 
 .resume__lang button.active{
+
   color:white;
 
   background:
-    rgba(255,255,255,.08);
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.12),
+      rgba(215,177,138,.14)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.05);
 
   box-shadow:
+    0 4px 18px rgba(215,177,138,.08),
     inset 0 1px 0 rgba(255,255,255,.05);
 }
 
-/* SOFT INNER LIGHT */
+/* =========================================================
+   SHINE
+========================================================= */
 
 .resume__lang button.active::before{
   content:'';
@@ -259,52 +322,20 @@ body{
   border-radius:inherit;
 
   background:
-    radial-gradient(
-      circle at top,
-      rgba(255,255,255,.08),
-      transparent 70%
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255,255,255,.12) 50%,
+      transparent 80%
     );
 
-  pointer-events:none;
+  animation:
+    shine 4s linear infinite;
 }
 
-/* MOBILE */
-
-@media(max-width:768px){
-
-  .resume__langWrap{
-    top:14px;
-    margin-bottom:3rem;
-  }
-
-  .resume__lang{
-    transform:scale(.92);
-  }
-
-  .resume__lang button{
-    width:95px;
-    height:42px;
-
-    font-size:.82rem;
-  }
-
-}
-
-@media(max-width:480px){
-
-  .resume__lang{
-    transform:scale(.84);
-  }
-
-  .resume__lang button{
-    width:82px;
-    height:38px;
-
-    font-size:.76rem;
-  }
-
-}
-/* ================= CONTENT ================= */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .resume__content{
   display:flex;
@@ -312,7 +343,9 @@ body{
   gap:14rem;
 }
 
-/* ================= SECTION ================= */
+/* =========================================================
+   SECTION
+========================================================= */
 
 .resume__section{
   display:grid;
@@ -336,7 +369,9 @@ body{
   order:1;
 }
 
-/* ================= IMAGE ================= */
+/* =========================================================
+   IMAGE
+========================================================= */
 
 .resume__imageWrap{
   position:relative;
@@ -389,8 +424,6 @@ body{
     0 0 100px rgba(215,177,138,.08);
 }
 
-/* HOVER */
-
 .resume__section:hover .resume__imageWrap img{
   transform:scale(1.06);
 
@@ -400,7 +433,9 @@ body{
     saturate(1.05);
 }
 
-/* ================= OVERLAY ================= */
+/* =========================================================
+   OVERLAY
+========================================================= */
 
 .resume__imageOverlay{
   position:absolute;
@@ -416,61 +451,12 @@ body{
       rgba(0,0,0,.88),
       rgba(0,0,0,.2) 42%,
       transparent 65%
-    ),
-
-    radial-gradient(
-      circle at top right,
-      rgba(215,177,138,.22),
-      transparent 35%
-    ),
-
-    radial-gradient(
-      circle at center,
-      transparent 45%,
-      rgba(0,0,0,.25) 100%
     );
 }
 
-/* LIGHT EFFECT */
-
-.resume__imageOverlay::before{
-  content:'';
-
-  position:absolute;
-  inset:0;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent 20%,
-      rgba(255,255,255,.08) 38%,
-      transparent 52%
-    );
-
-  mix-blend-mode:soft-light;
-
-  animation:
-    luxuryLight 8s ease-in-out infinite;
-}
-
-@keyframes luxuryLight{
-
-  0%{
-    transform:translateX(-120%);
-    opacity:0;
-  }
-
-  30%{
-    opacity:1;
-  }
-
-  100%{
-    transform:translateX(140%);
-    opacity:0;
-  }
-}
-
-/* ================= NUMBER ================= */
+/* =========================================================
+   NUMBER
+========================================================= */
 
 .resume__number{
   position:absolute;
@@ -488,7 +474,9 @@ body{
   line-height:1;
 }
 
-/* ================= ZOOM ================= */
+/* =========================================================
+   ZOOM
+========================================================= */
 
 .resume__zoom{
   position:absolute;
@@ -527,7 +515,9 @@ body{
   transform:translateY(0);
 }
 
-/* ================= TEXT ================= */
+/* =========================================================
+   TEXT
+========================================================= */
 
 .resume__textWrap{
   position:relative;
@@ -593,7 +583,9 @@ body{
   font-size:1rem;
 }
 
-/* ================= RTL ================= */
+/* =========================================================
+   RTL
+========================================================= */
 
 .resume.rtl{
   direction:rtl;
@@ -615,7 +607,9 @@ body{
     );
 }
 
-/* ================= MODAL ================= */
+/* =========================================================
+   MODAL
+========================================================= */
 
 .resume__modal{
   position:fixed;
@@ -632,8 +626,6 @@ body{
   justify-content:center;
 
   padding:2rem;
-
-  animation:fadeIn .4s ease;
 }
 
 .resume__modal img{
@@ -643,8 +635,6 @@ body{
   object-fit:contain;
 
   border-radius:24px;
-
-  animation:zoomIn .4s ease;
 }
 
 .resume__close{
@@ -668,37 +658,43 @@ body{
   font-size:2rem;
 
   cursor:pointer;
-
-  transition:.35s ease;
 }
 
-.resume__close:hover{
-  transform:rotate(90deg);
-}
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
-/* ================= ANIMATION ================= */
+@keyframes shine{
 
-@keyframes fadeIn{
   from{
-    opacity:0;
+    transform:translateX(-120%);
   }
+
   to{
-    opacity:1;
+    transform:translateX(120%);
   }
+
 }
 
-@keyframes zoomIn{
-  from{
-    opacity:0;
-    transform:scale(.9);
+@keyframes dockLight{
+
+  0%{
+    transform:
+      translateX(0)
+      rotate(0deg);
   }
-  to{
-    opacity:1;
-    transform:scale(1);
+
+  100%{
+    transform:
+      translateX(60px)
+      rotate(360deg);
   }
+
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:1100px){
 
@@ -734,7 +730,9 @@ body{
   }
 }
 
-/* ================= MOBILE ================= */
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:768px){
 
@@ -800,11 +798,17 @@ body{
   }
 
   .resume__lang{
-    transform:scale(.88);
+    transform:scale(.9);
   }
-}
 
-/* ================= SMALL MOBILE ================= */
+  .resume__lang button{
+    width:76px;
+    height:34px;
+
+    font-size:.68rem;
+  }
+
+}
 
 @media(max-width:480px){
 
@@ -814,11 +818,6 @@ body{
 
   .resume__hero h1{
     font-size:3rem;
-  }
-
-  .resume__hero span{
-    font-size:.68rem;
-    letter-spacing:3px;
   }
 
   .resume__imageWrap img{
@@ -837,394 +836,17 @@ body{
   .resume__number{
     font-size:3rem;
   }
-}
-/* MULTI IMAGE */
 
-.resume__imageWrap.multi{
-  position:relative;
-  min-height:520px;
-}
-
-.resume__imageWrap.multi img{
-  position:absolute;
-
-  width:78%;
-  height:100%;
-
-  object-fit:cover;
-
-  border-radius:28px;
-
-  transition:
-  transform .8s ease,
-  filter .8s ease,
-  opacity .6s ease;
-
-  box-shadow:
-  0 30px 60px rgba(0,0,0,.45);
-}
-
-/* FIRST */
-
-.resume__imageWrap.multi img:nth-child(1){
-  left:0;
-  top:0;
-
-  z-index:3;
-}
-
-/* SECOND */
-
-.resume__imageWrap.multi img:nth-child(2){
-  right:0;
-  top:30px;
-
-  z-index:2;
-
-  transform:
-  scale(.92)
-  rotate(6deg);
-
-  opacity:.88;
-}
-
-/* THIRD */
-
-.resume__imageWrap.multi img:nth-child(3){
-  left:50%;
-  top:60px;
-
-  transform:
-  translateX(-50%)
-  scale(.84)
-  rotate(-5deg);
-
-  z-index:1;
-
-  opacity:.6;
-}
-
-.resume__section:hover
-.resume__imageWrap.multi img:nth-child(1){
-  transform:
-  translateY(-10px)
-  rotate(-2deg);
-}
-
-.resume__section:hover
-.resume__imageWrap.multi img:nth-child(2){
-  transform:
-  scale(.95)
-  rotate(8deg)
-  translateY(-8px);
-}
-
-.resume__section:hover
-.resume__imageWrap.multi img:nth-child(3){
-  transform:
-  translateX(-50%)
-  scale(.87)
-  rotate(-7deg)
-  translateY(-5px);
-}
-
-/* NO IMAGE MODE */
-
-.resume__section:not(:has(.resume__imageWrap)){
-  grid-template-columns:1fr;
-}
-
-.resume__section:not(:has(.resume__imageWrap))
-.resume__textWrap{
-  max-width:950px;
-}
-/* ===================================================
-   ULTRA LUXURY SWIPER
-=================================================== */
-
-.resumeSwiper{
-  width:100%;
-  height:760px;
-
-  overflow:visible;
-
-  padding-bottom:70px;
-}
-
-.resumeSwiper .swiper-slide{
-  width:78%;
-  height:100%;
-
-  transition:
-  transform .7s ease,
-  opacity .7s ease,
-  filter .7s ease;
-}
-
-/* SIDE SLIDES */
-
-.resumeSwiper .swiper-slide-prev,
-.resumeSwiper .swiper-slide-next{
-
-  opacity:.38;
-
-  filter:
-  blur(2px)
-  brightness(.6);
-
-  transform:
-  scale(.84);
-}
-
-/* ACTIVE */
-
-.resumeSwiper .swiper-slide-active{
-
-  opacity:1;
-
-  filter:none;
-
-  transform:
-  scale(1);
-}
-
-/* SLIDE */
-
-.resume__slide{
-  position:relative;
-
-  width:100%;
-  height:100%;
-
-  overflow:hidden;
-
-  border-radius:42px;
-
-  cursor:pointer;
-
-  isolation:isolate;
-}
-
-/* IMAGE */
-
-.resume__slide img{
-  width:100%;
-  height:100%;
-
-  object-fit:cover;
-
-  border-radius:42px;
-
-  transition:
-  transform 1.2s ease,
-  filter .8s ease;
-
-  box-shadow:
-  0 60px 120px rgba(0,0,0,.65),
-  0 0 100px rgba(215,177,138,.12);
-}
-
-/* HOVER */
-
-.resume__slide:hover img{
-
-  transform:scale(1.08);
-
-  filter:
-  brightness(1.05)
-  saturate(1.08);
-}
-
-/* LIGHT BORDER */
-
-.resume__slide::before{
-  content:'';
-
-  position:absolute;
-  inset:-1px;
-
-  border-radius:inherit;
-
-  background:
-  linear-gradient(
-    135deg,
-    rgba(255,255,255,.18),
-    rgba(215,177,138,.3),
-    transparent
-  );
-
-  z-index:3;
-
-  pointer-events:none;
-}
-
-/* PAGINATION */
-
-.resumeSwiper .swiper-pagination{
-  bottom:0 !important;
-}
-
-/* BULLET */
-
-.resumeSwiper .swiper-pagination-bullet{
-
-  width:10px;
-  height:10px;
-
-  background:
-  rgba(255,255,255,.25);
-
-  opacity:1;
-
-  transition:.45s ease;
-}
-
-/* ACTIVE BULLET */
-
-.resumeSwiper .swiper-pagination-bullet-active{
-
-  width:36px;
-
-  border-radius:999px;
-
-  background:
-  linear-gradient(
-    90deg,
-    #ffffff,
-    #d7b18a
-  );
-
-  box-shadow:
-  0 0 20px rgba(215,177,138,.45);
-}
-
-/* NAVIGATION */
-
-.resumeSwiper .swiper-button-next,
-.resumeSwiper .swiper-button-prev{
-
-  width:62px;
-  height:62px;
-
-  border-radius:50%;
-
-  backdrop-filter:blur(18px);
-
-  background:
-  rgba(255,255,255,.08);
-
-  border:
-  1px solid rgba(255,255,255,.08);
-
-  transition:.4s ease;
-}
-
-/* ICON */
-
-.resumeSwiper .swiper-button-next::after,
-.resumeSwiper .swiper-button-prev::after{
-
-  font-size:1rem;
-  font-weight:800;
-
-  color:white;
-}
-
-/* HOVER */
-
-.resumeSwiper .swiper-button-next:hover,
-.resumeSwiper .swiper-button-prev:hover{
-
-  transform:scale(1.08);
-
-  background:
-  rgba(215,177,138,.15);
-
-  box-shadow:
-  0 0 30px rgba(215,177,138,.25);
-}
-
-/* NUMBER */
-
-.resume__number{
-  position:absolute;
-
-  left:28px;
-  bottom:90px;
-
-  z-index:10;
-
-  font-size:7rem;
-  font-weight:800;
-
-  line-height:1;
-
-  color:
-  rgba(255,255,255,.08);
-
-  pointer-events:none;
-}
-
-/* MOBILE */
-
-@media(max-width:1100px){
-
-  .resumeSwiper{
-    height:620px;
+  .resume__lang{
+    transform:scale(.84);
   }
 
-}
+  .resume__lang button{
 
-@media(max-width:768px){
+    width:68px;
+    height:31px;
 
-  .resumeSwiper{
-    height:430px;
-
-    padding-bottom:60px;
-  }
-
-  .resumeSwiper .swiper-slide{
-    width:92%;
-  }
-
-  .resumeSwiper .swiper-button-next,
-  .resumeSwiper .swiper-button-prev{
-
-    width:48px;
-    height:48px;
-  }
-
-  .resume__slide{
-    border-radius:26px;
-  }
-
-  .resume__slide img{
-    border-radius:26px;
-  }
-
-  .resume__number{
-    font-size:4rem;
-
-    left:18px;
-    bottom:70px;
-  }
-
-}
-
-@media(max-width:480px){
-
-  .resumeSwiper{
-    height:320px;
-  }
-
-  .resumeSwiper .swiper-button-next,
-  .resumeSwiper .swiper-button-prev{
-
-    display:none;
-  }
-
-  .resume__number{
-    font-size:3rem;
+    font-size:.64rem;
   }
 
 }

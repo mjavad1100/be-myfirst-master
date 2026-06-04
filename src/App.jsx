@@ -2,10 +2,14 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
+  NavLink,
 } from 'react-router-dom';
 
-import { FaHome, FaUser, FaFolderOpen } from 'react-icons/fa';
+import {
+  FaHome,
+  FaUser,
+  FaFolderOpen,
+} from 'react-icons/fa';
 
 import About from './section/about/About';
 import Resume from './section/resume/resume';
@@ -23,33 +27,66 @@ const App = () => {
       <SpeedInsights />
       <Analytics />
 
-      {/* ULTRA ICON DOCK MENU */}
+      {/* PREMIUM FLOATING DOCK */}
 
       <nav className="global__menu">
 
         <div className="global__links">
 
-          <Link to="/" className="global__link">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? 'global__link active'
+                : 'global__link'
+            }
+          >
             <FaHome />
-          </Link>
+          </NavLink>
 
-          <Link to="/resume" className="global__link">
+          <NavLink
+            to="/resume"
+            className={({ isActive }) =>
+              isActive
+                ? 'global__link active'
+                : 'global__link'
+            }
+          >
             <FaUser />
-          </Link>
+          </NavLink>
 
-          <Link to="/services" className="global__link">
+          <NavLink
+            to="/services"
+            className={({ isActive }) =>
+              isActive
+                ? 'global__link active'
+                : 'global__link'
+            }
+          >
             <FaFolderOpen />
-          </Link>
+          </NavLink>
 
         </div>
 
       </nav>
 
       {/* ROUTES */}
+
       <Routes>
+
         <Route path="/" element={<About />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/services" element={<Services />} />
+
+        <Route
+          path="/resume"
+          element={<Resume />}
+        />
+
+        <Route
+          path="/services"
+          element={<Services />}
+        />
+
       </Routes>
 
     </Router>
