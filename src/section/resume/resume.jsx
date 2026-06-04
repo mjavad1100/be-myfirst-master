@@ -3,7 +3,7 @@
 import './resume.css';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 /* IMAGES */
 
@@ -18,10 +18,12 @@ import Img8 from '../../img/img8.jpg';
 import Img9 from '../../img/img9.jpg';
 import Img10 from '../../img/img10.jpg';
 
+/* ================= ANIMATION ================= */
+
 const fadeUp = {
   hidden: {
     opacity: 0,
-    y: 70,
+    y: 100,
   },
 
   visible: (i = 1) => ({
@@ -30,108 +32,104 @@ const fadeUp = {
 
     transition: {
       delay: i * 0.08,
-      duration: 1,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
 };
 
+const imageReveal = {
+  hidden: {
+    opacity: 0,
+    scale: 1.1,
+  },
+
+  visible: {
+    opacity: 1,
+    scale: 1,
+
+    transition: {
+      duration: 1.4,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 const Resume = () => {
   const [lang, setLang] = useState('fa');
 
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const [activeScroll, setActiveScroll] = useState(false);
-
-  const resumeRef = useRef(null);
+  const [selectedImage, setSelectedImage] =
+    useState(null);
 
   const content =
     lang === 'en'
       ? englishParagraphs
       : persianParagraphs;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setActiveScroll(entry.isIntersecting);
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    if (resumeRef.current) {
-      observer.observe(resumeRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <>
       <section
-        ref={resumeRef}
-        className={`resume ${
-          lang === 'fa'
+        className={`resume ${lang === 'fa'
             ? 'rtl'
             : ''
-        }`}
+          }`}
         dir={
           lang === 'fa'
             ? 'rtl'
             : 'ltr'
         }
       >
+        {/* BACKGROUND */}
+
         <div className="resume__noise"></div>
         <div className="resume__grid"></div>
 
-        <div className="resume__gradient gradient1"></div>
-        <div className="resume__gradient gradient2"></div>
+        <div className="resume__blur blur1"></div>
+        <div className="resume__blur blur2"></div>
 
         {/* LANGUAGE */}
 
-        <motion.div
-          className={`resume__langWrap ${
-            activeScroll
-              ? 'active'
-              : ''
-          }`}
-          initial={{
-            opacity: 0,
-            y: -40,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-        >
-          <div className="resume__lang">
-            <button
-              className={
-                lang === 'en'
-                  ? 'active'
-                  : ''
-              }
-              onClick={() => setLang('en')}
-            >
-              English
-            </button>
+      <motion.div
+  className="resume__langWrap"
+  initial={{
+    opacity:0,
+    y:20,
+  }}
+  whileInView={{
+    opacity:1,
+    y:0,
+  }}
+  transition={{
+    duration:.8,
+  }}
+>
+  <div className="resume__lang">
 
-            <button
-              className={
-                lang === 'fa'
-                  ? 'active'
-                  : ''
-              }
-              onClick={() => setLang('fa')}
-            >
-              فارسی
-            </button>
-          </div>
-        </motion.div>
+    <button
+      className={
+        lang === 'en'
+          ? 'active'
+          : ''
+      }
+      onClick={() => setLang('en')}
+    >
+      English
+    </button>
+
+    <button
+      className={
+        lang === 'fa'
+          ? 'active'
+          : ''
+      }
+      onClick={() => setLang('fa')}
+    >
+      فارسی
+    </button>
+
+  </div>
+</motion.div>
+        {/* CONTAINER */}
 
         <div className="resume__container">
 
@@ -143,16 +141,14 @@ const Resume = () => {
             animate="visible"
             variants={fadeUp}
           >
-            <span>
-              Luxury Hospitality Resume
-            </span>
+
 
             <h1>
               Resume
             </h1>
 
             <p>
-              VIP Hospitality • Fine Dining • Luxury Events
+              Fine Dining • VIP Hospitality • Luxury Events
             </p>
           </motion.div>
 
@@ -162,56 +158,73 @@ const Resume = () => {
 
             {content.map((item, i) => (
 
-              <motion.div
+              <motion.section
                 key={i}
                 custom={i}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{
+                  once: true,
+                  amount: 0.25,
+                }}
                 variants={fadeUp}
-                className="resume__card"
+                className={`resume__section ${i % 2 === 1
+                    ? 'reverse'
+                    : ''
+                  }`}
               >
-                <div className="resume__cardGlow"></div>
 
-                <div className="resume__cardInner">
+                {/* IMAGE */}
 
-                  {/* IMAGE */}
+                <motion.div
+                  className="resume__imageWrap"
+                  variants={imageReveal}
+                  onClick={() =>
+                    setSelectedImage(item.image)
+                  }
+                >
 
-                  <div
-                    className="resume__imageWrap"
-                    onClick={() => setSelectedImage(item.image)}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                    />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                  />
 
-                    <div className="resume__imageOverlay"></div>
+                  <div className="resume__imageOverlay"></div>
 
-                    <div className="resume__zoom">
-                      ⤢
-                    </div>
+                  <div className="resume__zoom">
+                    ⤢
                   </div>
 
-                  {/* TEXT */}
-
-                  <div className="resume__text">
-
-                    <div className="resume__line"></div>
-
-                    <h2>
-                      {item.title}
-                    </h2>
-
-                    <p>
-                      {item.text}
-                    </p>
-
+                  <div className="resume__number">
+                    {String(i + 1).padStart(2, '0')}
                   </div>
 
-                </div>
+                </motion.div>
 
-              </motion.div>
+                {/* TEXT */}
+
+                <motion.div
+                  className="resume__textWrap"
+                  variants={fadeUp}
+                >
+
+                  <div className="resume__miniLine"></div>
+
+                  <span className="resume__label">
+                    Experience
+                  </span>
+
+                  <h2>
+                    {item.title}
+                  </h2>
+
+                  <p>
+                    {item.text}
+                  </p>
+
+                </motion.div>
+
+              </motion.section>
 
             ))}
 
@@ -227,10 +240,14 @@ const Resume = () => {
 
         <div
           className="resume__modal"
-          onClick={() => setSelectedImage(null)}
+          onClick={() =>
+            setSelectedImage(null)
+          }
         >
 
-          <button className="resume__close">
+          <button
+            className="resume__close"
+          >
             ×
           </button>
 
@@ -246,6 +263,7 @@ const Resume = () => {
     </>
   );
 };
+
 
 // ================== PERSIAN ==================
 // ================== PERSIAN ==================
