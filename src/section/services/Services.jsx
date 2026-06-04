@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import './services.css';
 import { data } from './data';
 
-const Services = () => {
+const Services = memo(() => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
@@ -41,6 +41,7 @@ const Services = () => {
                 <img
                   src={item.image}
                   alt={item.titles[0]}
+                  loading="lazy"
                 />
 
                 <div className="services__overlay"></div>
@@ -85,12 +86,14 @@ const Services = () => {
             src={selectedImage}
             alt="preview"
             className="services__modal-image"
+            loading="lazy"
           />
 
         </div>
       )}
     </>
   );
-};
+});
 
+Services.displayName = 'Services';
 export default Services;

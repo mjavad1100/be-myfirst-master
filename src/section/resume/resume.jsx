@@ -3,7 +3,7 @@
 import './resume.css';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 /* IMAGES */
 
@@ -55,7 +55,7 @@ const imageReveal = {
   },
 };
 
-const Resume = () => {
+const Resume = memo(() => {
   const [lang, setLang] = useState('fa');
 
   const [selectedImage, setSelectedImage] =
@@ -187,6 +187,7 @@ const Resume = () => {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
                   />
 
                   <div className="resume__imageOverlay"></div>
@@ -254,6 +255,7 @@ const Resume = () => {
           <img
             src={selectedImage}
             alt="preview"
+            loading="lazy"
           />
 
         </div>
@@ -262,8 +264,9 @@ const Resume = () => {
 
     </>
   );
-};
+});
 
+Resume.displayName = 'Resume';
 
 // ================== PERSIAN ==================
 // ================== PERSIAN ==================

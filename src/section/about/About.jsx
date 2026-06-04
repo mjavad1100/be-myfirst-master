@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import HeaderImage from '../../img/hassan.jpg';
 import './about.css';
 import data from './data';
@@ -5,7 +6,7 @@ import data from './data';
 import 'animate.css';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 
-const About = () => {
+const About = memo(() => {
   return (
     <section id="about" className="hero">
 
@@ -89,6 +90,7 @@ const About = () => {
               <img
                 src={HeaderImage}
                 alt="Amir Hassan Kashani"
+                loading="lazy"
               />
 
               <div className="image__overlay"></div>
@@ -119,6 +121,7 @@ const About = () => {
 
     </section>
   );
-};
+});
 
+About.displayName = 'About';
 export default About;

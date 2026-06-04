@@ -4,6 +4,7 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
 
 import {
   FaHome,
@@ -11,14 +12,14 @@ import {
   FaFolderOpen,
 } from 'react-icons/fa';
 
-import About from './section/about/About';
-import Resume from './section/resume/resume';
-import Services from './section/services/Services';
-
 import 'bootstrap/dist/css/bootstrap-grid.css';
 
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
+
+const About = lazy(() => import('./section/about/About'));
+const Resume = lazy(() => import('./section/resume/resume'));
+const Services = lazy(() => import('./section/services/Services'));
 
 const App = () => {
   return (
@@ -73,21 +74,23 @@ const App = () => {
 
       {/* ROUTES */}
 
-      <Routes>
+      <Suspense fallback={<div />}>
+        <Routes>
 
-        <Route path="/" element={<About />} />
+          <Route path="/" element={<About />} />
 
-        <Route
-          path="/resume"
-          element={<Resume />}
-        />
+          <Route
+            path="/resume"
+            element={<Resume />}
+          />
 
-        <Route
-          path="/services"
-          element={<Services />}
-        />
+          <Route
+            path="/services"
+            element={<Services />}
+          />
 
-      </Routes>
+        </Routes>
+      </Suspense>
 
     </Router>
   );
