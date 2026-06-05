@@ -25,7 +25,7 @@ body{
 
 .services{
   position:relative;
-  padding:120px 24px;
+  padding:80px 24px;
   overflow:hidden;
 }
 
@@ -53,7 +53,7 @@ body{
 
 .services__header{
   text-align:center;
-  margin-bottom:90px;
+  margin-bottom:60px;
 }
 
 .services__tag{
@@ -155,7 +155,7 @@ body{
   height:100%;
   object-fit:cover;
   transition:transform 1.2s cubic-bezier(.16,1,.3,1);
-  filter:saturate(0.8);
+  filter:none;
 }
 
 .services__card:hover img{
@@ -163,10 +163,7 @@ body{
     scale(1.12)
     rotateZ(-2deg);
   
-  filter:
-    saturate(1.3)
-    brightness(1.1)
-    contrast(1.1);
+  filter:none;
 }
 
 /* ===== OVERLAY ===== */

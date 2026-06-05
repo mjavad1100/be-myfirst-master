@@ -48,7 +48,7 @@ body{
 
   overflow:hidden;
 
-  padding:7rem 2rem;
+  padding:3rem 2rem;
 
   background:
     radial-gradient(circle at top left,
@@ -163,7 +163,7 @@ body{
   display:grid;
   grid-template-columns:1.05fr .95fr;
 
-  gap:4rem;
+  gap:2.5rem;
 
   align-items:center;
 }
@@ -522,13 +522,7 @@ body{
 
   border-radius:42px;
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.65),
-      rgba(0,0,0,.08) 45%,
-      transparent
-    );
+  background:none;
 
   pointer-events:none;
 }
@@ -744,7 +738,7 @@ body{
 @media(max-width:1100px){
 
   .hero{
-    padding:5rem 1.5rem;
+    padding:3rem 1.5rem;
   }
 
   .hero__container{
