@@ -276,7 +276,7 @@ const persianParagraphs = [
     title: 'سوابق حرفه‌ای',
     text:
       'اینجانب امیرحسن کاشانی متولد سال ۱۳۸۳ در تهران هستم. فعالیت حرفه‌ای خود را در حوزه کافه و رستوران از مجموعه کافه رستوران عمارت یار واقع در محدوده تئاتر شهر و خیابان رشت آغاز کردم. پس از کسب تجربه در زمینه سرویس‌دهی، ارتباط با مشتری و اصول هاسپیتلیتی، همکاری خود را با کافه باغ بارمان ادامه دادم. اولین فعالیت جدی و حرفه‌ای بنده به عنوان کاپیتان اردر در کنار تیم‌های حرفه‌ای آقای نیما قاسمیان و شف عمران شکل گرفت. این دوره نقطه شروع یادگیری اصول سرویس لاکچری، مدیریت سالن، برخورد حرفه‌ای با مهمانان VIP و هماهنگی تیمی در فضای حرفه‌ای رستوران بود.',
-    image: Img1,
+    image: Img6,
   },
 
   {
@@ -311,7 +311,7 @@ const persianParagraphs = [
     title: 'تجربه هتل و رستوران (هتل پنج ستاره آراز)',
     text:
       'در نوروز ۱۴۰۴ به دعوت آقای بیژن الوندی مدیر اجرایی هتل پنج ستاره آراز، همکاری خود را با این مجموعه آغاز کردم. فعالیت در فضای یک هتل پنج ستاره تجربه‌ای ارزشمند در زمینه هتلداری، سرویس حرفه‌ای، مدیریت رضایت مهمانان و همکاری تیمی در سطح بین‌المللی برای بنده ایجاد کرد. این همکاری باعث شد آشنایی بیشتری با استانداردهای جهانی هاسپیتلیتی و نحوه ارائه خدمات در مجموعه‌های لوکس هتل و رستوران پیدا کنم.',
-    image: Img6,
+    image: Img1,
   },
 
   {
@@ -356,7 +356,7 @@ const englishParagraphs = [
     title: 'Professional Background',
     text:
       'My name is Amirhasan Kashani, born in Tehran in 2004. I started my professional career in the hospitality industry at Emarat Yar Café Restaurant located near City Theater on Rasht Street. After gaining valuable experience in customer service and luxury hospitality, I continued my journey with Barman Garden Café. My first major professional role as an Order Captain began through collaboration with hospitality teams led by Nima Ghasemian and Chef Omran, where I developed advanced skills in VIP guest management, fine dining service, team coordination, and high-standard restaurant operations.',
-    image: Img1,
+    image: Img6,
   },
 
   {
@@ -391,7 +391,7 @@ const englishParagraphs = [
     title: 'Hotel & Fine Dining Experience – Araz Five-Star Hotel',
     text:
       'I was invited by Mr. Bijan Alavandi, Executive Manager of Araz Five-Star Hotel, to collaborate during the Nowruz 1404 holiday season. Working in a luxury five-star hotel environment provided me with valuable experience in high-end hotel hospitality, guest satisfaction management, professional teamwork, and international service standards. This opportunity further strengthened my understanding of luxury hospitality operations and premium customer experiences.',
-    image: Img6,
+    image: Img1,
   },
 
   {
